@@ -1,0 +1,305 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+id/aftermain1"
+            android:layout_width="410dp"
+            android:layout_height="730dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/_bg__android_small___10_shape" />
+
+        <RelativeLayout android:id="@+id/frame_124"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <View
+                android:id="@+id/rectangle_1"
+                android:layout_width="410dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/savebutton_shape" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/frame_76"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="367dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView android:id="@+id/menubtn"
+                android:src="@drawable/menu2"
+                android:contentDescription="menubtn"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/frame_71"
+            android:layout_marginTop="370dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <View
+                android:id="@+id/rectangle_20"
+                android:layout_width="730dp"
+                android:layout_height="205dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/rectangle_20_shape" />
+
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="Inter"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text1_color"
+                android:textSize="16sp"
+
+                />
+
+            <RelativeLayout android:id="@+id/waitFriendGroup"
+                android:layout_marginTop="108dp"
+                android:layout_marginStart="250dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/rectangle_21"
+                    android:background="@drawable/rectangle_21_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="118dp"
+                    android:layout_height="78dp" />
+
+                <TextView android:id="@+id/text4"
+                    android:fontFamily="Inter"
+                    android:textSize="12sp"
+                    android:textColor="@color/text1_color"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_width="51dp"
+                    android:layout_height="38dp"
+                    android:text="@string/text4_string"
+                    />
+
+                <TextView android:id="@+id/friendCount"
+                    android:fontFamily="Inter"
+                    android:textSize="12sp"
+                    android:textColor="@color/text1_color"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="39dp"
+                    android:layout_height="23dp"
+                    android:text=""
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/group_8"
+                android:layout_marginTop="108dp"
+                android:layout_marginStart="39dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/rectangle_22"
+                    android:background="@drawable/rectangle_22_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="200dp"
+                    android:layout_height="78dp" />
+
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="Inter"
+                    android:text="@string/text2_string"
+                    android:textColor="@color/text1_color"
+                    android:textSize="12sp" />
+
+                <ImageView android:id="@+id/weatherIc"
+                    android:contentDescription="cloudy_1"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="41dp"
+                    android:layout_height="40dp" />
+
+                <TextView android:id="@+id/temperatureTv"
+                    android:fontFamily="Inter"
+                    android:textSize="20sp"
+                    android:textColor="@color/text1_color"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    tools:text="00"
+                    />
+
+                <TextView android:id="@+id/weatherTv"
+                    android:fontFamily="Inter"
+                    android:textSize="12dp"
+                    android:textColor="@color/text1_color"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    tools:text="Sunny"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- top 150, start 130-->
+        <RelativeLayout android:id="@+id/group_23"
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <View android:id="@+id/ellipse_6"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="280dp"
+                android:layout_height="160dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTest"
+                android:layout_width="280dp"
+                android:layout_height="160dp"
+                android:layout_weight="1" />
+
+            <RelativeLayout android:id="@+id/group_14"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="285dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View
+                    android:id="@+id/viewtest"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/ellipse_4_shape" />
+
+                <ImageView android:id="@+id/plus_2"
+                    android:src="@drawable/plus_2"
+                    android:contentDescription="plus_2"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp" />
+
+                <TextView android:id="@+id/text5"
+                    android:fontFamily="Inter"
+                    android:textSize="14sp"
+                    android:textColor="@color/text1_color"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="85dp"
+                    android:layout_height="35dp"
+                    android:text="@string/text5_string"
+                    tools:text="펫 추가 등록"
+                    />
+
+            </RelativeLayout>
+
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/testimage"-->
+<!--                android:layout_width="111dp"-->
+<!--                android:layout_height="127dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="23dp"-->
+<!--                android:contentDescription="cool_1"-->
+<!--                />-->
+
+<!--            <ImageView android:id="@+id/pencil_1"-->
+<!--                android:src="@drawable/pencil_1"-->
+<!--                android:contentDescription="pencil_1"-->
+<!--                android:layout_marginStart="100dp"-->
+<!--                android:layout_marginTop="115dp"-->
+<!--                android:layout_width="39dp"-->
+<!--                android:layout_height="27dp" />-->
+
+<!--            <TextView android:id="@+id/petname"-->
+<!--                android:fontFamily="Inter"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="@color/text1_color"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="150dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:text=""-->
+<!--                />-->
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/frame_69"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="340dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+            <RelativeLayout android:id="@+id/notify_userbtn"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView android:id="@+id/userimage"
+                    android:src="@drawable/user_2"
+                    android:contentDescription="user_2"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/in_view_drawer"
+        layout="@layout/view_drawer"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

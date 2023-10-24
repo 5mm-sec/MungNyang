@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="petbowl_page_items">
+        <item>g</item>
+        <item>kg</item>
+        <item>컵</item>
+    </string-array>
+</resources>

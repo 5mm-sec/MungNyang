@@ -1,0 +1,111 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- 다른 레이아웃 요소들을 여기에 추가 -->
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pagetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+
+
+
+        <View
+            android:id="@+id/bfschedule_rectangle_ek1"
+            android:layout_width="410dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/diarypage_rectangle_ek1_shape" />
+
+
+        <RelativeLayout
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="367dp"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:id="@+id/menubtn"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="menubtn"
+                android:src="@drawable/menubtn" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/pagetitletext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/schedule_tilte"
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="Inter"
+                android:text="@string/schedule_tilte_string"
+                android:textColor="@color/_bg__bf_schedule_page_ek2_color"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/frame_130"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:id="@+id/back_imagebutton"
+                android:layout_width="33dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="0dp"
+                android:contentDescription="back_imagebutton"
+                android:src="@drawable/back_imagebutton" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- FloatingActionButton을 사용하여 오른쪽 하단에 버튼 추가 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_schedule_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/plus"
+        app:layout_anchor="@id/recyclerSchedule"
+        app:layout_anchorGravity="bottom|end" />
+
+    <!-- 리사이클러뷰 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSchedule"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

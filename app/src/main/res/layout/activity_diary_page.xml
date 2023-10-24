@@ -1,0 +1,330 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout android:id="@+id/diary_page"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_diary_page_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__diary_page_ek2"
+                    android:background="@drawable/_bg__diary_page_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="617dp" />
+
+
+                <RelativeLayout android:id="@+id/addframe"
+                    android:layout_marginTop="617dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/check_page_rectangle"
+                        android:background="@drawable/kg_ceck_page_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+                    <RelativeLayout android:id="@+id/addbutton"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp"
+                        >
+
+                        <TextView android:id="@+id/addtextview"
+                            android:fontFamily="Inter"
+                            android:textSize="20sp"
+                            android:textColor="@color/_bg__diary_page_ek2_color"
+                            android:layout_marginLeft="187dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="62dp"
+                            android:layout_height="38dp"
+                            android:text="@string/addtextview_string"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/diaryframe"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_width="375dp"
+                    android:layout_height="500dp"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/detail_group"
+                        android:layout_marginTop="163dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout android:id="@+id/detail"
+                            android:layout_marginTop="38dp"
+                            android:layout_marginStart="13dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <EditText
+                                android:id="@+id/detail_edittext"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="3.5dp"
+                                android:background="@drawable/kgpage_edittext_shape"
+                                android:hint="일지 내용을 작성해주세요. (200자 이내)"
+                                android:inputType="textMultiLine"
+                                android:maxLength="200"
+                                android:textSize="18sp" />
+
+
+                        </RelativeLayout>
+
+                        <TextView android:id="@+id/detail_textview"
+                            android:fontFamily="Inter"
+                            android:textSize="18sp"
+                            android:textColor="@color/detail_text_color"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="109dp"
+                            android:layout_height="35dp"
+                            android:text="@string/detail_textview_string"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout android:id="@+id/title_group"
+                        android:layout_marginTop="109dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout android:id="@+id/title_edittext"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginStart="57dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <EditText
+                                android:id="@+id/title_text"
+                                android:background="@drawable/kgpage_edittext_shape"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="3.5dp"
+                                android:layout_width="300dp"
+                                android:layout_height="30dp"
+                                android:hint="일지 제목을 작성해주세요. (20자 이내)"
+                                android:maxLength="20"
+                                android:textSize="15sp"
+                                android:inputType="textMultiLine"/>
+
+
+                        </RelativeLayout>
+
+                        <TextView android:id="@+id/title_textview"
+                            android:fontFamily="Inter"
+                            android:textSize="18sp"
+                            android:textColor="@color/detail_text_color"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_width="70dp"
+                            android:layout_height="35dp"
+                            android:text="@string/title_textview_string"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout android:id="@+id/time_group"
+                        android:layout_marginTop="54dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout android:id="@+id/time_group_ek1"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginStart="57dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+
+                            <RelativeLayout android:id="@+id/af_edittext"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginStart="110dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                >
+
+                                <EditText
+                                    android:id="@+id/af_time"
+                                    android:background="@drawable/kgpage_edittext_shape"
+                                    android:layout_marginLeft="12.5dp"
+                                    android:layout_marginTop="3.5dp"
+                                    android:layout_width="65.5dp"
+                                    android:layout_height="32.5dp"
+                                    android:gravity="center"
+                                    android:inputType="time"/>
+
+
+
+                            </RelativeLayout>
+
+                            <TextView android:id="@+id/explan_text"
+                                android:fontFamily="Inter"
+                                android:textSize="20sp"
+                                android:textColor="@color/detail_text_color"
+                                android:layout_marginLeft="88dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_width="39dp"
+                                android:layout_height="38.89dp"
+                                android:text="@string/explan_text_string"
+                                />
+
+
+                            <RelativeLayout android:id="@+id/bf_edittext"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                >
+
+                                <EditText
+                                    android:id="@+id/bf_time"
+                                    android:background="@drawable/kgpage_edittext_shape"
+                                    android:layout_marginLeft="15.5dp"
+                                    android:layout_marginTop="3.5dp"
+                                    android:layout_width="67.5dp"
+                                    android:layout_height="32.5dp"
+                                    android:gravity="center"
+                                    android:inputType="time"/>
+
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <TextView android:id="@+id/time_textview"
+                            android:fontFamily="Inter"
+                            android:textSize="18sp"
+                            android:textColor="@color/detail_text_color"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_width="70dp"
+                            android:layout_height="35dp"
+                            android:text="@string/time_textview_string"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView android:id="@+id/day_textview"
+                        android:fontFamily="Inter"
+                        android:textSize="18sp"
+                        android:textColor="@color/detail_text_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="200dp"
+                        android:layout_height="37dp"
+                        android:text=""
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/pagetitle"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/diary_check_page_rectangle"
+                        android:background="@drawable/kg_ceck_page_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+
+                    <RelativeLayout android:id="@+id/menu"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="367dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/menubtn"
+                            android:src="@drawable/menubtn"
+                            android:contentDescription="menubtn"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp" />
+
+                    </RelativeLayout>
+
+                    <TextView android:id="@+id/diary_tilte"
+                        android:fontFamily="Inter"
+                        android:textSize="18sp"
+                        android:textColor="@color/_bg__diary_page_ek2_color"
+                        android:layout_marginLeft="164dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="105dp"
+                        android:layout_height="35dp"
+                        android:text="@string/diary_tilte_string"
+                        />
+
+
+                    <RelativeLayout android:id="@+id/frame_130"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/back_imagebutton"
+                            android:src="@drawable/back_imagebutton"
+                            android:contentDescription="back_imagebutton"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="33dp"
+                            android:layout_height="34dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

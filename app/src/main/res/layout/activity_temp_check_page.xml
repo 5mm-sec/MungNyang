@@ -1,0 +1,247 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView android:id="@+id/temp_check_page"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_temp_check_page_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <View
+                    android:id="@+id/_bg__temp_check_page_ek2"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/_bg__kg_ceck_page_ek2_shape" />
+                .
+                <RelativeLayout android:id="@+id/temp_check_page_noted_frame"
+                    android:layout_marginTop="365dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/temp_check_page_noted_group"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout
+                            android:id="@+id/temp_check_page_noted_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginTop="80dp"
+                            android:background="@drawable/kgpage_edittext_shape">
+
+                            <TextView
+                                android:id="@+id/temp_check_page_noted"
+                                android:layout_width="170dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="-2dp"
+                                android:layout_marginLeft="60dp"
+                                android:layout_marginTop="-1dp"
+                                android:gravity="center"
+                                android:fontFamily="Inter"
+                                android:text="@string/check_page_noted_string"
+                                android:textColor="@color/kg_ceck_page_noted_color"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/temp_check_page_frame142"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="210dp"
+                            >
+
+                            <Spinner
+                                android:id="@+id/temp_spinner"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/kgpage_edittext_shape"
+                                android:gravity="center"/>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/temp_check_page_noted_edittext"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <EditText
+                                android:id="@+id/temp_edittext"
+                                android:background="@drawable/kgpage_edittext_shape"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="130dp"
+                                android:layout_height="40dp"
+                                android:gravity="center"
+                                android:inputType="number"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/temp_check_page_expaln_frame"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/temp_check_page_rectangle20"
+                        android:background="@drawable/kg_ceck_page_rectangle20_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="273dp" />
+
+
+                    <RelativeLayout android:id="@+id/temp_check_page_explan_group"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginStart="110dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView android:id="@+id/temp_check_page_daytextview"
+                            android:fontFamily="Inter"
+                            android:textSize="18sp"
+                            android:textColor="@color/kg_ceck_page_noted_color"
+                            android:layout_marginLeft="55dp"
+                            android:layout_marginTop="166dp"
+                            android:layout_width="114dp"
+                            android:layout_height="35dp"
+                            android:text=""
+                            />
+
+                        <TextView android:id="@+id/temp_check_page_titletextview"
+                            android:fontFamily="Inter"
+                            android:textSize="18sp"
+                            android:textColor="@color/kg_ceck_page_noted_color"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="130dp"
+                            android:layout_width="204dp"
+                            android:layout_height="35dp"
+                            android:text="@string/temp_check_page_titletextview_string"
+                            />
+
+                        <ImageView android:id="@+id/temp_check_pageimage"
+                            android:src="@drawable/temp_ceck_image"
+                            android:contentDescription="temp_ceck_page_scale_image"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="114dp"
+                            android:layout_height="114dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/temp_check_pagetitle"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/temp_check_page_rectangle"
+                        android:background="@drawable/kg_ceck_page_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+
+                    <RelativeLayout android:id="@+id/temp_check_page_menu"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="367dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/temp_check_page_menubtn"
+                            android:src="@drawable/kg_ceck_page_menubtn"
+                            android:contentDescription="temp_ceck_page_menubtn"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout android:id="@+id/temp_check_page_pagetitletext"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="153dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/temp_check_page_kg_tilte"
+                            android:layout_width="111dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="Inter"
+                            android:text="@string/temp_check_page_kg_tilte_string"
+                            android:textColor="@color/_bg__kg_ceck_page_ek2_color"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout android:id="@+id/temp_check_page_frame"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/temp_check_page_back_imagebutton_ek1"
+                            android:src="@drawable/kg_ceck_page_back_imagebutton_ek1"
+                            android:contentDescription="temp_check_page_back_imagebutton_ek1"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="33dp"
+                            android:layout_height="34dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

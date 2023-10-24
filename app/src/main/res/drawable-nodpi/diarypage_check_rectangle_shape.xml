@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- diarypage_check_rectangle from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle" >
+	<solid android:color="@color/diarypage_check_rectangle_color" />
+</shape>
+

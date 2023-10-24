@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/share_diary_info"
+        android:layout_width="360dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/userNickNameText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center|left"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="이름"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="내용"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/defaultuserimage"/>
+
+
+</LinearLayout>

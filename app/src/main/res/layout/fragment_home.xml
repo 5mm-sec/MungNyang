@@ -1,0 +1,187 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_beforemain_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__beforemain_ek2"
+                    android:background="@drawable/_bg__beforemain_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_73"
+                    android:layout_marginTop="157dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/rectangle_30"
+                        android:layout_width="410dp"
+                        android:layout_height="581dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:contentDescription="rectangle_30"
+                        android:src="@drawable/rectangle_30" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_12"
+                    android:layout_marginTop="461dp"
+                    android:layout_marginStart="96dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/addbtn"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout android:id="@+id/frame_11"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginStart="44dp"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView
+                                android:id="@+id/addbtn2"
+                                android:layout_width="130dp"
+                                android:layout_height="40dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/addbtn"
+
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_74"
+                    android:layout_marginTop="431dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/text"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="169dp"
+                        android:layout_height="27dp"
+                        android:text="@string/text_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_10"
+                    android:layout_marginTop="301dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/dogimage"
+                        android:src="@drawable/laughing1"
+                        android:contentDescription="dogimage"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="111dp"
+                        android:layout_height="127dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_9"
+                    android:layout_marginTop="263dp"
+                    android:layout_marginStart="253dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/questionimage"
+                        android:src="@drawable/question2"
+                        android:contentDescription="questionimage"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="72dp"
+                        android:layout_height="52dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_124"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View
+                        android:id="@+id/rectangle_1"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/savebutton_shape" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_76"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="367dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/menubtn"
+                        android:src="@drawable/menu2"
+                        android:contentDescription="menubtn"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

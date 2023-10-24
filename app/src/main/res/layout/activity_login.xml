@@ -1,0 +1,373 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		login
+     *	@date 		Thursday 06th of July 2023 09:21:40 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+    <ScrollView android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_login_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__login_ek2"
+                    android:background="@drawable/_bg__login_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="770dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_88"
+                    android:layout_marginTop="219dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/idline"
+                        android:background="@drawable/idline_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="350dp"
+                        android:layout_height="1dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_87"
+                    android:layout_marginTop="188dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <EditText   android:id="@+id/emailedittext"
+                        android:background="@drawable/idedittext_shape"
+
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="350dp"
+                        android:layout_height="29dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_86"
+                    android:layout_marginTop="272dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/passwordline"
+                        android:background="@drawable/passwordline_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="350dp"
+                        android:layout_height="1dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_85"
+                    android:layout_marginTop="240dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <EditText   android:id="@+id/passwordedittext"
+                        android:background="@drawable/passwordedittext_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="350dp"
+                        android:layout_height="29dp"
+                        android:gravity="center"
+                        android:inputType="textPassword"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_97"
+                    android:layout_marginTop="355dp"
+                    android:layout_marginStart="213dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/findpwbutton"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/findpwbutton_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="101dp"
+                        android:layout_height="27dp"
+                        android:text="@string/findpwbutton_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_96"
+                    android:layout_marginTop="355dp"
+                    android:layout_marginStart="129dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/findidbutton"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/findpwbutton_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="88dp"
+                        android:layout_height="27dp"
+                        android:text="@string/findidbutton_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_84"
+                    android:layout_marginTop="538dp"
+                    android:layout_marginStart="90dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/newtothistextview"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/findpwbutton_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="176dp"
+                        android:layout_height="27dp"
+                        android:text="@string/newtothistextview_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_80"
+                    android:layout_marginTop="725dp"
+                    android:layout_marginStart="142dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/problembutton"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/problembutton_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="146dp"
+                        android:layout_height="27dp"
+                        android:text="@string/problembutton_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_81"
+                    android:layout_marginTop="538dp"
+                    android:layout_marginStart="262dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/signupbutton"
+                        android:fontFamily="Inter"
+                        android:textSize="14sp"
+                        android:textColor="@color/problembutton_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="71dp"
+                        android:layout_height="27dp"
+                        android:text="@string/signupbutton_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_89"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/logo"
+                        android:src="@drawable/login_main_logo"
+                        android:contentDescription="logo"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="369dp"
+                        android:layout_height="59dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_90"
+                    android:layout_marginTop="426dp"
+                    android:layout_marginStart="111dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/googleloginbuttontextview"
+                        android:fontFamily="Inter"
+                        android:textSize="20sp"
+                        android:textColor="@color/googleloginbuttontextview_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="233dp"
+                        android:layout_height="38dp"
+                        android:text="@string/googleloginbuttontextview_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_91"
+                    android:layout_marginTop="425dp"
+                    android:layout_marginStart="68dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/free_icon_google_300221_2"
+                        android:src="@drawable/free_icon_google_300221_2"
+                        android:contentDescription="free_icon_google_300221_2"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="26dp"
+                        android:layout_height="25dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_92"
+                    android:layout_marginTop="482dp"
+                    android:layout_marginStart="111dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/kakaologinbuttontextview"
+                        android:fontFamily="Inter"
+                        android:textSize="20sp"
+                        android:textColor="@color/googleloginbuttontextview_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="224dp"
+                        android:layout_height="38dp"
+                        android:text="@string/kakaologinbuttontextview_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_93"
+                    android:layout_marginTop="482dp"
+                    android:layout_marginStart="68dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/kakaoicon"
+                        android:src="@drawable/kakaoicon"
+                        android:contentDescription="kakaoicon"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="25.47dp"
+                        android:layout_height="26dp" />
+
+                </RelativeLayout>
+
+                <ImageView android:id="@+id/image_1"
+                    android:src="@drawable/image_1"
+                    android:contentDescription="image_1"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="417dp"
+                    android:layout_width="350.82dp"
+                    android:layout_height="44dp" />
+
+                <ImageView android:id="@+id/image_3"
+                    android:src="@drawable/image_3"
+                    android:contentDescription="image_3"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="472dp"
+                    android:layout_width="350.82dp"
+                    android:layout_height="44dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_99"
+                    android:layout_marginTop="291dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/loginBtn"
+                        android:background="@drawable/rectangle_1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="350dp"
+                        android:layout_height="44dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_98"
+                    android:layout_marginTop="301dp"
+                    android:layout_marginStart="175dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/loginbutton"
+                        android:fontFamily="Inter"
+                        android:textSize="20sp"
+                        android:textColor="@color/_bg__login_ek2_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="81dp"
+                        android:layout_height="38dp"
+                        android:text="@string/loginbutton_string"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

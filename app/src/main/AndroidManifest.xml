@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.camera" />
+
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MungNyang"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainPage.MoreAddPetActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".User.SignupActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Numerical.NumericalCheck.KGPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Numerical.NumericalCheck.TEMPPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Numerical.NumericalCheck.PetbowlCheckActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Numerical.NumericalCheck.SnackCheckActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Numerical.NumericalCheck.WaterCheckActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Symptom.SymptomCheckActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Diary.DiaryPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Schedule.BeforeScheduleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiaryPage.Schedule.AddScheduleDialogPage"
+            android:exported="false" />
+
+        <activity
+            android:name=".User.MyPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".User.UserInfoPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Friend.AddFriend.AddFriendActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Friend.FriendListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Fragment.ShareToDiary.DiaryBoardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Fragment.Walking.WalkingActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.mungnyang.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".Fragment.ShareToWalking.WalkingBoardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".User.Login.LoginActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Pet.AddPetActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainPage.MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Pet.PetDTO.UpdatePetActivity"
+            android:exported="false"/>
+
+
+<!--        <activity-->
+<!--            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+<!--                &lt;!&ndash; Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" &ndash;&gt;-->
+<!--                <data-->
+<!--                    android:host="oauth"-->
+<!--                    android:scheme="kakao2ab3e1d57402481098dc858b5a9c7beb" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.mungnyang.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="@string/naver_client_id" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="1fb663990371e71b38b393e7283bd44b" />
+
+        <meta-data
+            android:name="com.kakao.vectormap.APP_KEY"
+            android:value="1fb663990371e71b38b393e7283bd44b" />
+
+    </application>
+
+
+</manifest>

@@ -1,0 +1,604 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ScrollView android:id="@+id/diarypage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout android:id="@+id/content_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout android:id="@+id/page_diarypage_ek1"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/_bg__diarypage_ek2"
+                        android:background="@drawable/_bg__diarypage_ek2_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="1100dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/diarypage_frame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-33dp"
+                        android:layout_marginTop="66dp">
+
+                        <View
+                            android:id="@+id/diarypage_rectangle"
+                            android:layout_width="380dp"
+                            android:layout_height="971dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/diarypage_rectangle_shape" />
+
+                        <TextView
+                            android:id="@+id/diary_result"
+                            android:layout_width="197dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="62dp"
+                            android:layout_marginTop="849dp"
+                            android:fontFamily="Inter"
+                            android:text=""
+                            android:textColor="@color/diary_result_color"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/schedule_delete"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="390dp"
+                            android:layout_marginTop="743dp"
+                            android:contentDescription="schedule_delete"
+                            android:src="@drawable/delete" />
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_title_group4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="790dp">
+
+                            <View
+                                android:id="@+id/diary_rectangle"
+                                android:layout_width="380dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="@drawable/diary_rectangle_shape" />
+
+                            <TextView
+                                android:id="@+id/diary_title"
+                                android:layout_width="72dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="17dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diary_title_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diary_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="diary_image"
+                                android:src="@drawable/diary_image" />
+
+                            <ImageView
+                                android:id="@+id/diary_arrowupbtn"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="345dp"
+                                android:layout_marginTop="12dp"
+                                android:contentDescription="diary_arrowupbtn"
+                                android:src="@drawable/arrowup" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/diarypage_schedule_result"
+                            android:layout_width="320dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="62dp"
+                            android:layout_marginTop="741dp"
+                            android:fontFamily="Inter"
+                            android:text=""
+                            android:textColor="@color/diary_result_color"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/diary_delete"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="390dp"
+                            android:layout_marginTop="851dp"
+                            android:contentDescription="diary_delete"
+                            android:src="@drawable/delete" />
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_title_group3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="682dp">
+
+                            <View
+                                android:id="@+id/diarypage_norify_rectangle"
+                                android:layout_width="380dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="@drawable/diarypage_norify_rectangle_shape" />
+
+                            <TextView
+                                android:id="@+id/diarypage_notification_title"
+                                android:layout_width="40dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="43dp"
+                                android:layout_marginTop="17dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_notification_title_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_notificationbell_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="9dp"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="diarypage_notificationbell_image"
+                                android:src="@drawable/diarypage_notificationbell_image" />
+
+                            <ImageView
+                                android:id="@+id/notification_arrowupbtn"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="345dp"
+                                android:layout_marginTop="12dp"
+                                android:contentDescription="notification_arrowupbtn"
+                                android:src="@drawable/arrowup" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/diarypage_symptom_check_result"
+                            android:layout_width="320dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="62dp"
+                            android:layout_marginTop="608dp"
+                            android:fontFamily="Inter"
+                            android:text=""
+                            android:textColor="@color/diary_result_color"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/symptom_delete"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="390dp"
+                            android:layout_marginTop="605dp"
+                            android:contentDescription="symptom_delete"
+                            android:src="@drawable/delete" />
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_tilte_group2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="544dp">
+
+                            <View
+                                android:id="@+id/diarypage_dangerous_rectangle"
+                                android:layout_width="380dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="@drawable/diarypage_dangerous_rectangle_shape" />
+
+                            <TextView
+                                android:id="@+id/diarypage_dangerous_title"
+                                android:layout_width="65dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="42dp"
+                                android:layout_marginTop="17dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_dangerous_title_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_dangerous_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="diarypage_dangerous_image"
+                                android:src="@drawable/diarypage_dangerous_image" />
+
+                            <ImageView
+                                android:id="@+id/dangerous_arrowupbtn"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="345dp"
+                                android:layout_marginTop="12dp"
+                                android:contentDescription="dangerous_arrowupbtn"
+                                android:src="@drawable/arrowup" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_water_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="371dp"
+                            android:layout_marginTop="474dp">
+
+                            <TextView
+                                android:id="@+id/diarypage_water_text"
+                                android:layout_width="51dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="47dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_water_text_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/diarypage_water_result"
+                                android:layout_width="36dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="29dp"
+                                android:fontFamily="Inter"
+                                android:text=""
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_water_image"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="0dp"
+                                android:contentDescription="diarypage_water_image"
+                                android:src="@drawable/diarypage_water_image" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_cannedfood_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="301dp"
+                            android:layout_marginTop="474dp">
+
+                            <TextView
+                                android:id="@+id/diarypage_cannedfood_text"
+                                android:layout_width="40dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginTop="46dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_cannedfood_text_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/diarypage_cannedfood_result"
+                                android:layout_width="30dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginTop="28dp"
+                                android:fontFamily="Inter"
+                                android:text=""
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_cannedfood_image"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:contentDescription="diarypage_cannedfood_image"
+                                android:src="@drawable/diarypage_cannedfood_image" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_petbowl_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="223dp"
+                            android:layout_marginTop="472dp">
+
+                            <TextView
+                                android:id="@+id/diarypage_petbowl_text"
+                                android:layout_width="40dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginTop="48dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_petbowl_text_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/diarypage_petbowl_result"
+                                android:layout_width="30dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="Inter"
+                                android:text=""
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_petbowl_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:contentDescription="diarypage_petbowl_image"
+                                android:src="@drawable/diarypage_petbowl_image" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_temp_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="150dp"
+                            android:layout_marginTop="474dp">
+
+                            <TextView
+                                android:id="@+id/diarypage_temp_text"
+                                android:layout_width="40dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginTop="47dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_temp_text_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/diarypage_temp_result"
+                                android:layout_width="33dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="29dp"
+                                android:fontFamily="Inter"
+                                android:text=""
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_temperature_image"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:contentDescription="diarypage_temperature_image"
+                                android:src="@drawable/diarypage_temperature_image" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_kg_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="474dp">
+
+                            <TextView
+                                android:id="@+id/diarypage_kg_text"
+                                android:layout_width="45dp"
+                                android:layout_height="23dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_marginTop="47dp"
+                                android:fontFamily="Inter"
+                                android:gravity="end"
+                                android:text="@string/diarypage_kg_text_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/diarypage_kg_result"
+                                android:layout_width="35dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginLeft="-8dp"
+                                android:layout_marginTop="29dp"
+                                android:fontFamily="Inter"
+                                android:gravity="end"
+                                android:text=""
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_scale_image"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/diarypage_scale_image" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_title_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="414dp">
+
+                            <View
+                                android:id="@+id/diarypage_check_rectangle"
+                                android:layout_width="380dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="@drawable/diarypage_check_rectangle_shape" />
+
+                            <TextView
+                                android:id="@+id/diarypage_check_title"
+                                android:layout_width="65dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="42dp"
+                                android:layout_marginTop="17dp"
+                                android:fontFamily="Inter"
+                                android:text="@string/diarypage_check_title_string"
+                                android:textColor="@color/diary_result_color"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_check_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="9dp"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="diarypage_check_image"
+                                android:src="@drawable/diarypage_check_image" />
+
+                            <ImageView
+                                android:id="@+id/numerical_delete"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="305dp"
+                                android:layout_marginTop="9dp"
+                                android:contentDescription="symptom_delete"
+                                android:src="@drawable/delete" />
+
+                            <ImageView
+                                android:id="@+id/diarypage_saveData"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="340dp"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="save_data"
+                                android:src="@drawable/bookmark2" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/diarypage_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="401dp">
+
+                            <ImageView
+                                android:id="@+id/diarypage_bottomline"
+                                android:layout_width="380dp"
+                                android:layout_height="1.9dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="1dp"
+                                android:contentDescription="diarypage_bottomline"
+                                android:src="@drawable/diarypage_bottomline" />
+
+                        </RelativeLayout>
+
+
+                        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                            android:id="@+id/calendarView2"
+                            android:layout_width="400dp"
+                            android:layout_height="365dp"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="17dp"
+                            android:contentDescription="calendarView2" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout android:id="@+id/diarypagetitle"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/diarypage_rectangle_ek1"
+                            android:background="@drawable/diarypage_rectangle_ek1_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="410dp"
+                            android:layout_height="42dp" />
+
+
+                        <RelativeLayout android:id="@+id/diarypage_menu"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginStart="367dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/diarypage_menubtn"
+                                android:src="@drawable/diarypage_menubtn"
+                                android:contentDescription="diarypage_menubtn"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/diarypagetitletext"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="153dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView android:id="@+id/diarypage_hospitaltext"
+                                android:fontFamily="Inter"
+                                android:textSize="18sp"
+                                android:textColor="@color/_bg__diarypage_ek2_color"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="95dp"
+                                android:layout_height="35dp"
+                                android:text="@string/diarypage_hospitaltext_string"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
+
+    <include
+        android:id="@+id/in_view_drawer"
+        layout="@layout/view_drawer"/>
+</androidx.drawerlayout.widget.DrawerLayout>

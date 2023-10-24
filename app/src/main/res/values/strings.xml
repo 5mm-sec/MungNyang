@@ -1,0 +1,238 @@
+<resources>
+    <string name="app_name">MungNyang</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn1_string">등록하기</string>
+
+
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="text1_string">해피는 오늘 무슨일이 있었나요 ?</string>
+    <string name="text4_string">친구 요청</string>
+    <string name="text3_string">0건</string>
+    <string name="text2_string">오늘의 날씨</string>
+    <string name="text5_string">펫 추가 등록</string>
+    <string name="text6_string">오이</string>
+
+    <string name="nametextview_string">이름</string>
+    <string name="birthdattextview_string">생년월일</string>
+    <string name="kindtextview_string">품종</string>
+    <string name="mantextview_string">남아</string>
+    <string name="dogtextview_string">반려견</string>
+    <string name="cattextview_string">반려묘</string>
+    <string name="womantextview_string">여아</string>
+    <string name="birthdaybuttontextview_string">날짜 선택</string>
+    <string name="savetextview_string">등록</string>
+    <string name="weighttextview_string">몸무게</string>
+    <string name="kgtextview_string">kg</string>
+    <string name="vaccinationtetview_string">예방접종</string>
+    <string name="allvaccinetextview_string">종합백신</string>
+    <string name="influenzatextview_string">인플루엔자</string>
+    <string name="kennelcorptextview_string">켄넬코프</string>
+    <string name="heartwormtextview_string">심장사상충</string>
+    <string name="rabiestextview_string">광견병</string>
+    <string name="covidtextview_string">코로나 장염</string>
+    <string name="allselecttextview_string">전체 선택</string>
+    <string name="neuteredtextview_string">중성화 여부</string>
+    <string name="medical_history_textview_string">과거 병력</string>
+    <string name="yestextview_string">예</string>
+    <string name="notextview_string">아니오</string>
+    <string name="addpettextview_string">반려동물 등록</string>
+
+    <!--반려동물 수정-->
+    <string name="updatePettextview_string">반려동물 수정</string>
+    <string name="updateTextview_string">수정</string>
+    <string name="deleteTextview_string">삭제</string>
+
+
+    <string name="loginbutton_string">로그인</string>
+    <string name="findpwbutton_string">비밀번호 찾기</string>
+    <string name="findidbutton_string">아이디 찾기</string>
+    <string name="newtothistextview_string">멍냥 일지가 처음이신가요?</string>
+    <string name="problembutton_string">문제가 발생하셨나요?</string>
+    <string name="signupbutton_string">회원가입</string>
+
+
+    <string name="googleloginbuttontextview_string">Google 계정으로 로그인</string>
+    <string name="kakaologinbuttontextview_string">Kakao 계정으로 로그인</string>
+
+
+    <string name="signuptextview_string">회원가입</string>
+    <string name="hi_text1_string">반가워요!</string>
+    <string name="hi_text2_string">소중한 개인정보를 안전하게 저장해드릴게요</string>
+    <string name="pwcheck_string">중복확인</string>
+    <string name="signup_emailtextview_string">이메일</string>
+    <string name="signup_usernametextview_string">이름</string>
+    <string name="signup_nicknametextview_string">닉네임</string>
+    <string name="signup_phonetextview_string">전화번호</string>
+    <string name="signuppwtextview_string">비밀번호</string>
+    <string name="pwcheck_ek1_string">영문 대/소문자, 숫자, 기호(!@#$%^*-)를 포함하여 8~20글자 사이로</string>
+    <string name="idcheck_string">최대 20자까지 입력 가능합니다.</string>
+    <string name="whatproblem_string">문제가 발생하셨나요?</string>
+    <string name="signuptextview_ek1_string">회원가입</string>
+    <string name="signup_emailcheck_string">중복확인</string>
+    <string name="nextsteptextview_string">다음 단계로</string>
+    <string name="idcheck2_string">영문 소문자, 숫자만 입력 가능합니다.</string>
+    <string name="pwcheck2_string">사용해 주세요</string>
+
+
+    <string name="hospitaltext_string">동물 병원 찾기</string>
+    <string name="find_hospital_text">주변 동물 병원</string>
+    <string name="text_string">반려동물을 등록해주세요!</string>
+
+    <string name="diarypage_hospitaltext_string">일지 작성</string>
+    <string name="diarypage_check_title_string">수치작성</string>
+    <string name="diarypage_kg_text_string">몸무게</string>
+    <string name="diarypage_temp_text_string">체온</string>
+    <string name="diarypage_petbowl_text_string">식사</string>
+    <string name="diarypage_cannedfood_text_string">간식</string>
+    <string name="diarypage_water_text_string">음수량</string>
+    <string name="diarypage_dangerous_title_string">이상 증상</string>
+    <string name="diarypage_notification_title_string">일정</string>
+    <string name="diary_title_string">멍!냥! 일지</string>
+
+
+    <string name="check_page_noted_string">기록하기</string>
+    <string name="kg_check_page_titletextview_string">몸무게를 작성해주세요!</string>
+    <string name="kg_check_page_kg_tilte_string">몸무게 기록</string>
+
+    <string name="temp_check_page_titletextview_string">체온을 작성해주세요!</string>
+    <string name="temp_check_page_kg_tilte_string">체온 기록</string>
+
+    <string name="petbowl_check_page_titletextview_string">식사량을 작성해주세요!</string>
+    <string name="petbowl_check_page_kg_tilte_string">식사량 기록</string>
+
+    <string name="snack_check_page_titletextview_string">간식량을 작성해주세요!</string>
+    <string name="snack_check_page_kg_tilte_string">간식량 기록</string>
+
+    <string name="water_check_page_titletextview_string">음수량을 작성해주세요!</string>
+    <string name="water_check_page_kg_tilte_string">음수량 기록</string>
+
+    <string name="symptom_tilte_string">이상 증상 기록</string>
+    <string name="__symptom_ceck_explan_text_string">*이상증상 리스트입니다.\n강아지/고양이를 기준으로 작성된 정보이며, 아래 증상이 나타날시 주변 동물병원으로 데려가보시는 것을 추천드립니다.</string>
+
+    <string name="__symptom_ceck_question_text1_string">다리를 전다.</string>
+    <string name="__symptom_ceck_question_text2_string">눈이 이상하다.</string>
+    <string name="__symptom_ceck_question_text3_string">배가 부풀어 오른다.</string>
+    <string name="__symptom_ceck_question_text4_string">이상하게 걷는다.</string>
+    <string name="__symptom_ceck_question_text5_string">발작을 일으킨다.</string>
+    <string name="__symptom_ceck_question_text6_string">식욕이 준다.</string>
+    <string name="__symptom_ceck_question_text7_string">볼일을 못본다.</string>
+    <string name="__symptom_ceck_question_text8_string">혈변을 한다.</string>
+    <string name="__symptom_ceck_question_text9_string">설사를 한다.</string>
+    <string name="__symptom_ceck_question_text10_string">구토를 한다.</string>
+    <string name="__symptom_ceck_question_text11_string">열이 높다.</string>
+    <string name="__symptom_ceck_question_text12_string">기침을 한다.</string>
+    <string name="__symptom_ceck_question_text13_string">호흡이 이상하다.</string>
+
+    <string name="__symptom_ceck_other_title_string">기타</string>
+    <string name="__symptom_ceck_other_text_string">기타 증상이 있으면 적어주세요.</string>
+
+    <string name="__symptom_ceck_addtextview_string">등록</string>
+
+    <string name="schedule_add_text_string">일정 작성하기</string>
+    <string name="schedule_tilte_string">일정 등록</string>
+
+    <string name="diary_tilte_string">멍!냥! 일지</string>
+    <string name="time_textview_string">시간 :</string>
+    <string name="explan_text_string">~</string>
+    <string name="title_textview_string">제목 :</string>
+    <string name="detail_textview_string">일지 작성 :</string>
+    <string name="addtextview_string">작성</string>
+
+    <string name="schedule_addtextview_string">등록</string>
+    <string name="schedule_time_textview_string">일정 시간</string>
+    <string name="schedule_detail_text_string">  (  50 )</string>
+    <string name="schedule_detail_textview_string">일정 내용</string>
+    <string name="schedule_title_text_string"> </string>
+    <string name="schedule_title_textview_string">일정 제목</string>
+
+    <string name="hospital_roadaddress_textview_string">도로명 주소</string>
+    <string name="hospital_infopageurl_textview_string">상세페이지</string>
+    <string name="hospital_phonenumber_textview_string">전화번호</string>
+    <string name="hospital_category_textview_string">카테고리</string>
+    <string name="hospital_place_textview_string">장소명</string>
+    <string name="hospital_switchtextview_string">모든 동물병원</string>
+    <string name="hospital_moreinfo_textview_string">상세 정보</string>
+
+
+    <!--  image desc  -->
+    <string name="icon_close_desc">icon close</string>
+    <string name="icon_home_desc">icon home</string>
+    <string name="icon_user_desc">icon user</string>
+    <string name="icon_adduser_desc">icon adduser</string>
+    <string name="icon_logout_desc">icon logout</string>
+
+    <!--  drawer  -->
+    <string name="home">홈</string>
+    <string name="add_friend">친구추가</string>
+    <string name="friend_list">친구목록</string>
+    <string name="user">사용자</string>
+    <string name="logout">로그아웃</string>
+    <!--  main  -->
+    <string name="open_desc">열기</string>
+
+
+    <string name="address_text_string">충청남도 아산시 순천향로 순천향대학교</string>
+    <string name="school_title_string">학교</string>
+    <string name="phonenumber_text_string">010-0000-0000</string>
+    <string name="phonenumber_title_string">전화번호</string>
+    <string name="name_text_string">김정현, 오민석</string>
+    <string name="name_title_string">개발</string>
+    <string name="bottom_title_string">개발자 소개</string>
+    <string name="userpage_home_text_string">홈으로 이동</string>
+    <string name="userpage_logout_text_string">로그아웃</string>
+    <string name="userpage_user_info_text_string">개인정보</string>
+    <string name="userpage_settingtext_string">설정</string>
+
+    <string name="userpage_info_text_string">반려동물 정보</string>
+
+    <string name="userpage_temp_check_tilte_string">마이페이지</string>
+
+    <string name="userinfo_temp_check_tilte_string">개인정보</string>
+
+    <string name="useremailtextview_string">이메일</string>
+    <string name="nicknametext_string">닉네임</string>
+    <string name="phonenum_string">전화번호</string>
+    <string name="usernametext_string">이름</string>
+    <string name="setting_info_string1">사용자의 정보를 나타내는 페이지 입니다.</string>
+    <string name="setting_info_string2">수정 사항을 작성한 뒤 저장하기 버튼을 눌러주세요.</string>
+
+    <string name="userinfo_addtextview_string">수정</string>
+
+    <string name="addFriend_title_string">친구추가</string>
+
+    <string name="friendList_title_string">친구목록</string>
+
+
+    <!--  커뮤니티  -->
+    <string name="community_fragment_textview_string">커뮤니티</string>
+
+    <string name="community_showjournal_string">일지공유</string>
+    <string name="community_showwalking_string">멍!냥산책</string>
+    <string name="community_whoshow_string">> 친구만!</string>
+    <string name="community_showtextview_string">표시</string>
+    <string name="community_nametextview_string"> </string>
+
+    <!-- 병원 -->
+    <string name="walking_fragmenttextview_string">산책</string>
+    <string name="walking_goal_textview_string">목표 설정</string>
+
+    <string name="walking_activity_textview_string">산책</string>
+    <string name="walking_activity_petkcaltextview_string">멍냥 칼로리</string>
+    <string name="walking_activity_time_string">00 : 00</string>
+    <string name="walking_activity_mykcal_string">0</string>
+    <string name="walking_activity_petkcal_string">0</string>
+    <string name="walking_activity_distance_string">0.00</string>
+    <string name="walking_activity_timetextview_string">소요시간</string>
+    <string name="walking_activity_mykcaltextview_string">내 칼로리</string>
+    <string name="____string"> </string>
+
+
+    <string name="walking_goal_timer_textview_string">목표 시간 설정</string>
+    <string name="walking_goal_timer_addtextview_string">등록</string>
+    <string name="walking_goal_distance_textview_string">목표 거리 설정</string>
+    <string name="walking_goal_distance_addtextview_string">등록</string>
+    <string name="walking_goal_kcal_textview_string">목표 칼로리 설정</string>
+    <string name="walking_goal_kcal_addtextview_string">등록</string>
+
+</resources>

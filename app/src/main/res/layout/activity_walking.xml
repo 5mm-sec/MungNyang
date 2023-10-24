@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android ="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout android:id="@+id/page_walking_activity_ek1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <View   android:id="@+id/_bg__walking_activity_ek2"
+                android:background="@drawable/_bg__walking_activity_ek2_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="410dp"
+                android:layout_height="770dp" />
+
+
+            <RelativeLayout android:id="@+id/frame_17"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__frame_17_ek1"
+                    android:background="@drawable/_bg__frame_17_ek1_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="42dp" />
+
+                <View   android:id="@+id/walking_activity_topbar"
+                    android:background="@drawable/walking_activity_topbar_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="42dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_16"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="188dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView android:id="@+id/walking_activity_textview"
+                    android:textSize="18sp"
+                    android:textColor="@color/_bg__walking_activity_ek2_color"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="49.8dp"
+                    android:layout_height="27.8dp"
+                    android:text="@string/walking_activity_textview_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_15"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="367dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <ImageView android:id="@+id/walking_activity_menubutton"
+                    android:src="@drawable/walking_activity_menubutton"
+                    android:contentDescription="walking_activity_menubutton"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_14"
+                android:layout_marginTop="42dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__frame_14_ek1"
+                    android:background="@drawable/_bg__frame_14_ek1_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="651dp" />
+
+                <View   android:id="@+id/walking_activity_mainrectangle"
+                    android:background="@drawable/walking_activity_mainrectangle_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="770dp" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ogak"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="40dp"
+                />
+            <RelativeLayout android:id="@+id/frame_13"
+                android:layout_marginTop="299dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+
+                <TextView android:id="@+id/walking_activity_petkcaltextview"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="17sp"
+                    android:textColor="@color/walking_activity_petkcaltextview_color"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="124dp"
+                    android:layout_height="25.7dp"
+                    android:text="@string/walking_activity_petkcaltextview_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_12"
+                android:layout_marginTop="339dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <com.kakao.vectormap.MapView
+                    android:id="@+id/walkingMapView"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="380dp"
+                    android:layout_height="380dp" />
+
+            </RelativeLayout>
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/walkingActivitySwitchButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                >
+            </com.suke.widget.SwitchButton>
+
+
+            <RelativeLayout android:id="@+id/frame_11"
+                android:layout_marginTop="139dp"
+                android:layout_marginStart="-15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView android:id="@+id/walking_activity_time"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="30sp"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="148dp"
+                    android:layout_height="49dp"
+                    android:text="@string/walking_activity_time_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_10"
+                android:layout_marginTop="201dp"
+                android:layout_marginStart="-15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView android:id="@+id/walking_activity_mykcal"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="30sp"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="148dp"
+                    android:layout_height="49dp"
+                    android:text="@string/walking_activity_mykcal_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_9"
+                android:layout_marginTop="262dp"
+                android:layout_marginStart="-15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+
+                <TextView android:id="@+id/walking_activity_petkcal"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="30sp"
+                    android:textColor="@color/_bg__frame_17_ek1_color"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="148dp"
+                    android:layout_height="49dp"
+                    android:text="@string/walking_activity_petkcal_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_8"
+                android:layout_marginTop="44dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/walking_activity_distance"
+                    android:layout_width="220dp"
+                    android:layout_height="106dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginLeft="-13dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:text="@string/walking_activity_distance_string"
+                    android:textSize="80sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_7"
+                android:layout_marginTop="176dp"
+                android:layout_marginStart="59dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView android:id="@+id/walking_activity_timetextview"
+
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="17sp"
+                    android:textColor="@color/walking_activity_petkcaltextview_color"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="77dp"
+                    android:layout_height="25.7dp"
+                    android:text="@string/walking_activity_timetextview_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_6"
+                android:layout_marginTop="240dp"
+                android:layout_marginStart="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView android:id="@+id/walking_activity_mykcaltextview"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:textSize="17sp"
+                    android:textColor="@color/walking_activity_petkcaltextview_color"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="108dp"
+                    android:layout_height="25.7dp"
+                    android:text="@string/walking_activity_mykcaltextview_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_5"
+                android:layout_marginTop="19.63dp"
+                android:layout_marginStart="211.34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+
+
+                <RelativeLayout android:id="@+id/walking_activity_area"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginStart="63dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <!--여기-->
+
+
+
+                    <!--                <ImageView android:id="@+id/polygon_1"-->
+                    <!--                    android:src="@drawable/polygon_1"-->
+                    <!--                    android:contentDescription="polygon_1"-->
+                    <!--                    android:layout_marginStart="50dp"-->
+                    <!--                    android:layout_marginTop="-44dp"-->
+                    <!--                    android:layout_width="56.44dp"-->
+                    <!--                    android:layout_height="281.53dp" />-->
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_4"
+                android:layout_marginTop="195dp"
+                android:layout_marginStart="275dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/walking_activity_buttonarea"
+                    android:background="@drawable/walking_activity_buttonarea_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="120dp"
+                    android:layout_height="54dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_3"
+                android:layout_marginTop="204dp"
+                android:layout_marginStart="290dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView android:id="@+id/walking_activity_savebutton"
+                    android:src="@drawable/walking_activity_save_button"
+                    android:contentDescription="walking_activity_savebutton"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="39.12dp"
+                    android:layout_height="38dp" />
+
+
+                <ImageView android:id="@+id/walking_activity_questionbutton"
+                    android:src="@drawable/walking_activity_questionbutton"
+                    android:contentDescription="walking_activity_questionbutton"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="39.12dp"
+                    android:layout_height="38dp" />
+
+            </RelativeLayout>
+
+
+
+            <ImageView   android:id="@+id/petView"
+                android:background="@drawable/ellipse_5_shape"
+                android:layout_marginStart="289dp"
+                android:layout_marginTop="65dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp" />
+
+            <RelativeLayout android:id="@+id/frame_1"
+                android:layout_marginTop="240dp"
+                android:layout_marginStart="172dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView android:id="@+id/walking_activity_stop_button"
+                    android:src="@drawable/walking_activity_stop_button"
+                    android:contentDescription="walking_activity_stop_button"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp" />
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/homeButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/walkingactivity_homebutton"
+                android:layout_marginTop="730dp"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/in_view_drawer"
+        layout="@layout/view_drawer"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+

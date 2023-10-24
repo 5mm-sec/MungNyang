@@ -1,0 +1,395 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView android:id="@+id/community_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout android:id="@+id/page_community_fragment_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <RelativeLayout android:id="@+id/frame_124"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/rectangle_1"
+                        android:background="@drawable/savebutton_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/petbowl_check_page_frame"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/back_imagebutton"
+                        android:src="@drawable/kg_ceck_page_back_imagebutton_ek1"
+                        android:contentDescription="petbowl_check_page_back_imagebutton_ek1"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="33dp"
+                        android:layout_height="34dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame_77"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="153dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/addFriendTitle"
+                        android:fontFamily="Inter"
+                        android:textSize="18sp"
+                        android:textColor="@color/_bg__frame_74_ek2_color"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="95dp"
+                        android:layout_height="35dp"
+                        android:text="@string/community_fragment_textview_string"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame_22"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/community_mainrectangle"
+                        android:background="@drawable/community_mainrectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="615dp" />
+
+                    <View
+                        android:id="@+id/community_profilerectangle"
+                        android:layout_width="410dp"
+                        android:layout_height="270dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/boardrect" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_weight="0.5"
+                    android:id="@+id/recyclerWalkingAnswerList"
+                    android:layout_marginTop="315dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="285dp" />
+
+                <RelativeLayout android:id="@+id/frame_76"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView android:id="@+id/user_image"
+                        android:src="@drawable/petimagebackground"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView android:id="@+id/user_nickname"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/user_image"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame123545"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="370dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView android:id="@+id/boardDelete"
+                        android:src="@drawable/delete"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame12354125"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView android:id="@+id/mapImage"
+                        android:src="@drawable/nullimage"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout android:id="@+id/frame15422"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_infoText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame112"
+                    android:layout_marginTop="135dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_dayText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="날짜 :" />
+
+                    <TextView android:id="@+id/walking_diary_selectedDay"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame154"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_timeText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="산책 시간 :" />
+
+                    <TextView android:id="@+id/walking_diary_startTime"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="58dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView android:id="@+id/walking_diary_endTime"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginStart="88dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame154235"
+                    android:layout_marginTop="185dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_elapsedText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="소요 시간 :" />
+
+                    <TextView android:id="@+id/walking_diary_elapsed"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="58dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame15423"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_distanceText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="거리 :" />
+
+                    <TextView android:id="@+id/walking_diary_distance"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame1542223"
+                    android:layout_marginTop="235dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_myKcalText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="내 칼로리 :" />
+
+                    <TextView android:id="@+id/walking_diary_myKcal"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/frame1543"
+                    android:layout_marginTop="260dp"
+                    android:layout_marginStart="240dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/walking_diary_petKcalText"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="멍냥 칼로리 :" />
+
+                    <TextView android:id="@+id/walking_diary_petKcal"
+                        android:textSize="12sp"
+                        android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </RelativeLayout>
+
+
+                <TextView android:id="@+id/diary_answer"
+                    android:textSize="12sp"
+                    android:textColor="@color/_bg__userpage_bottom_frame_ek1_color"
+                    android:layout_marginTop="360dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="410dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="605dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/send_user_image"
+                    android:src="@drawable/petimagebackground"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <EditText
+                    android:id="@+id/comment_edit_text"
+                    android:hint="댓글 달기..."
+                    android:layout_width="290dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="top|start" />
+
+                <ImageView
+                    android:id="@+id/send"
+                    android:src="@drawable/send"
+                    android:contentDescription="petbowl_check_page_back_imagebutton_ek1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</HorizontalScrollView>

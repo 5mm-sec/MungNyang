@@ -1,0 +1,627 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView android:id="@+id/_symptom_ceck_page"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout android:id="@+id/page___symptom_ceck_page_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg____symptom_ceck_page_ek2"
+                    android:background="@drawable/_bg____symptom_ceck_page_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="1043dp" />
+
+
+                <RelativeLayout android:id="@+id/symptom_ceck_addframe"
+                    android:layout_marginTop="1003dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/symptom_ceck_rectangle"
+                        android:background="@drawable/__symptom_ceck_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+                    <RelativeLayout android:id="@+id/symptom_ceck_addbutton"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp"
+                        >
+
+                        <TextView android:id="@+id/symptom_check_addtextview"
+                            android:fontFamily="Inter"
+                            android:textSize="20sp"
+                            android:textColor="@color/_bg____symptom_ceck_page_ek2_color"
+                            android:layout_marginLeft="187dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="62dp"
+                            android:layout_height="38dp"
+                            android:text="@string/__symptom_ceck_addtextview_string"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/__symptom_ceck_otherframe"
+                    android:layout_marginTop="836dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_other_group"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/__symptom_ceck_other_rectangle"
+                            android:background="@drawable/__symptom_ceck_other_rectangle_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="410dp"
+                            android:layout_height="167dp" />
+
+                        <EditText
+                            android:id="@+id/detail_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="115dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="45dp"
+                            android:background="@drawable/kgpage_edittext_shape"
+                            android:hint="  기타 증상이 있으면 작성해 주세요. (50자 이내)"
+                            android:inputType="textMultiLine"
+                            android:maxLength="50"
+                            android:textSize="16sp" />
+
+                        <TextView android:id="@+id/__symptom_ceck_other_title"
+                            android:fontFamily="Inter"
+                            android:textSize="16sp"
+                            android:textColor="@color/__symptom_ceck_other_text_color"
+                            android:layout_marginLeft="21dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_width="62dp"
+                            android:layout_height="27dp"
+                            android:text="@string/__symptom_ceck_other_title_string"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/__symptom_ceck_questionframe"
+                    android:layout_marginTop="158dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_question_group"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group13"
+                            android:layout_marginTop="628dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark13"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark13"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text13"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="123dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text13_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group12"
+                            android:layout_marginTop="576dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark12"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark12"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text12"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="97dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text12_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group11"
+                            android:layout_marginTop="524dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark11"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark11"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text11"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="85dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text11_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group10"
+                            android:layout_marginTop="472dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark10"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark10"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text10"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="95dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text10_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group9"
+                            android:layout_marginTop="420dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark9"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark9"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text9"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="98dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text9_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group8"
+                            android:layout_marginTop="368dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark8"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark8"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text8"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="98dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text8_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group7"
+                            android:layout_marginTop="316dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark7"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark7"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text7"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="112dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text7_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group6"
+                            android:layout_marginTop="264dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark6"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark6"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text6"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="98dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text6_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group5"
+                            android:layout_marginTop="212dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark5"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark5"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text5"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="125dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text5_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group4"
+                            android:layout_marginTop="160dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark4"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark4"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text4"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="125dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text4_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group3"
+                            android:layout_marginTop="108dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark3"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark3"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text3"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="141dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text3_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group2"
+                            android:layout_marginTop="56dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark2"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark2"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text2"
+                                android:fontFamily="Inter"
+                                android:textSize="14sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="112dp"
+                                android:layout_height="27dp"
+                                android:text="@string/__symptom_ceck_question_text2_string"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout android:id="@+id/__symptom_ceck_question_group1"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView android:id="@+id/symptom_checkmark1"
+                                android:src="@drawable/__symptom_checkmark1"
+                                android:contentDescription="__symptom_checkmark1"
+                                android:layout_marginStart="347dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <TextView android:id="@+id/symptom_check_text1"
+                                android:fontFamily="Inter"
+                                android:textSize="15sp"
+                                android:textColor="@color/__symptom_ceck_other_text_color"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_width="105.5dp"
+                                android:layout_height="28.5dp"
+                                android:text="@string/__symptom_ceck_question_text1_string"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/__symptom_ceck_explanframe"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_explan_group"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/__symptom_ceck_rectangle20"
+                            android:background="@drawable/__symptom_ceck_rectangle20_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="410dp"
+                            android:layout_height="92dp" />
+
+                        <TextView android:id="@+id/__symptom_ceck_explan_text"
+                            android:fontFamily="Inter"
+                            android:textSize="12sp"
+                            android:textColor="@color/__symptom_ceck_other_text_color"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="399dp"
+                            android:layout_height="68dp"
+                            android:text="@string/__symptom_ceck_explan_text_string"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/__symptom_ceck_pagetitle"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/__symptom_ceck_rectangle"
+                        android:background="@drawable/__symptom_ceck_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="42dp" />
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_menu"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="367dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/__symptom_ceck_menubtn"
+                            android:src="@drawable/__symptom_ceck_menubtn"
+                            android:contentDescription="__symptom_ceck_menubtn"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_pagetitletext"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="151dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                    </RelativeLayout>
+
+                    <TextView android:id="@+id/symptom_tilte"
+                        android:fontFamily="Inter"
+                        android:textSize="18sp"
+                        android:textColor="@color/_bg____symptom_ceck_page_ek2_color"
+                        android:layout_marginLeft="150dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="133dp"
+                        android:layout_height="35dp"
+                        android:text="@string/symptom_tilte_string"
+                        />
+
+
+                    <RelativeLayout android:id="@+id/__symptom_ceck_frame130"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/symptom_check_back_imagebutton"
+                            android:src="@drawable/__symptom_ceck_back_imagebutton"
+                            android:contentDescription="__symptom_ceck_back_imagebutton"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="33dp"
+                            android:layout_height="34dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
