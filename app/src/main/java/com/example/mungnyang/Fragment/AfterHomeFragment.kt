@@ -74,7 +74,7 @@ class AfterHomeFragment : Fragment(), Interface {
     private var waitStatus = ""
     private var waitAccountEmail = ""
 
-    private var petName = ""
+    private var userName = ""
     private var petImage = ""
 
 
@@ -90,7 +90,7 @@ class AfterHomeFragment : Fragment(), Interface {
             for(i in ProfileManagementOBJ.List){
                 if(i.isClicked){
                     tempString += i.petName+", "
-                    break;
+                    break
                 }
             }
             var temp = 0;
@@ -100,10 +100,10 @@ class AfterHomeFragment : Fragment(), Interface {
                 }
             }
             temp --;
-            if(temp >0){
-                tempString =  tempString.substring(0,tempString.length-2);
-                tempString +="외에 " +temp +"명의 친구  "
-            }
+//            if(temp >0){
+//                tempString =  tempString.substring(0,tempString.length-2);
+//                tempString +="외에 " +temp +"명의 친구  "
+//            }
 
             if(tempString != ""){
                 tempString = tempString.substring(0,tempString.length-2);
@@ -131,7 +131,7 @@ class AfterHomeFragment : Fragment(), Interface {
         initializeViews() // 초기화 함수 호출 (리사이클러뷰를 초기화)
 
         accountEmail = arguments?.getString("accountEmail") ?: ""
-//        petName = arguments?.getString("petName") ?: ""
+        userName = arguments?.getString("userName") ?: ""
 //        petImage = arguments?.getString("petImage") ?: ""
         //ProfileManagementOBJ.refreshFrom(accountEmail)
 
@@ -142,7 +142,7 @@ class AfterHomeFragment : Fragment(), Interface {
         findWaitFriend(accountEmail)
 
         Log.d("afterFramgment email : ", accountEmail)
-//        Log.d("afterFramgment 펫 이름 : ", petName)
+        Log.d("afterFramgment 유저 이름 : ", userName)
 //        Log.d("afterFramgment 펫 이미지 : ", petImage)
 
         // 펫 추가 버튼 클릭 시 이벤트 처리 (Intent)
@@ -154,7 +154,7 @@ class AfterHomeFragment : Fragment(), Interface {
         }
 
         binding.inViewDrawer.userEmail.text = accountEmail
-        binding.inViewDrawer.userName.text
+        binding.inViewDrawer.userName.text = userName
         // drawer 잠금
         binding.dlMain.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
@@ -177,12 +177,12 @@ class AfterHomeFragment : Fragment(), Interface {
         val bnv_main = mainActivity.bnv_main
 
         binding.inViewDrawer.homeSetting.setOnClickListener {
-            Toast.makeText(activity, "홈 클릭", Toast.LENGTH_SHORT).show()
 
             val afterHomeFragment = AfterHomeFragment()
             // accountEmail 값을 Bundle에 추가하여 인자로 전달
             val args = Bundle()
             args.putString("accountEmail", accountEmail)
+            args.putString("userName", userName)
             afterHomeFragment.arguments = args
 
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -206,6 +206,7 @@ class AfterHomeFragment : Fragment(), Interface {
 
             val intent = Intent(requireContext(), MyPageActivity::class.java)
             intent.putExtra("userEmail", accountEmail)
+            intent.putExtra("userName", userName)
             startActivity(intent)
 
         }
@@ -245,6 +246,7 @@ class AfterHomeFragment : Fragment(), Interface {
 
             val myPageIntent  = Intent(requireContext(), MyPageActivity::class.java)
             myPageIntent.putExtra("userEmail", accountEmail)
+            myPageIntent.putExtra("userName", userName)
             startActivity(myPageIntent)
 
         }

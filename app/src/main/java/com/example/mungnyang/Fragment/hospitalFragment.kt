@@ -1,7 +1,9 @@
 package com.example.mungnyang
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -14,8 +16,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.drawerlayout.widget.DrawerLayout
+import com.example.mungnyang.Fragment.AfterHomeFragment
+import com.example.mungnyang.Friend.AddFriend.AddFriendActivity
+import com.example.mungnyang.Friend.FriendListActivity
 import com.example.mungnyang.Hospital.AddressInfo
+import com.example.mungnyang.MainPage.MainActivity
 import com.example.mungnyang.R
+import com.example.mungnyang.User.Login.LoginActivity
+import com.example.mungnyang.User.MyPageActivity
 import com.example.mungnyang.User.UserRetrofit.KAKAO_LOCAL_API_BASE_URL
 import com.example.mungnyang.User.UserRetrofit.kakaoLocalApiService
 import com.example.mungnyang.databinding.FragmentHospitalBinding
@@ -43,6 +53,10 @@ class hospitalFragment : Fragment() { // 클래스 이름 변경 (소문자 시�
     private var locationListener: LocationListener? = null
     private var labelLayer: LabelLayer? = null
     private var hospitallabelLayer: LabelLayer? = null
+
+    private var userName: String = ""
+    private var accountEmail = ""
+
     // 병원 라벨 정보를 저장할 맵
     val hospitalInfoMap = mutableMapOf<Label, AddressInfo>()
 
@@ -65,6 +79,9 @@ class hospitalFragment : Fragment() { // 클래스 이름 변경 (소문자 시�
         _binding = FragmentHospitalBinding.inflate(inflater, container, false) // 바인딩 초기화
 
         val view = binding.root // 뷰 가져오기
+
+        accountEmail = arguments?.getString("accountEmail") ?: ""
+        userName = arguments?.getString("userName") ?: ""
 
         val mapView = view.findViewById<MapView>(R.id.mapView)
         if (mapView != null) {
@@ -130,7 +147,103 @@ class hospitalFragment : Fragment() { // 클래스 이름 변경 (소문자 시�
             }
         }
 
+        binding.inViewDrawer.userEmail.text = accountEmail
+        binding.inViewDrawer.userName.text = userName
+        // drawer 잠금
+        binding.dlMain.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+
+        // 열기 버튼
+        binding.menubtn.setOnClickListener {
+            binding.dlMain.open()
+//            mBinding.dlMain.openDrawer(GravityCompat.START)
+//            mBinding.dlMain.openDrawer(Gravity.LEFT)
+        }
+
+        // 닫기 버튼
+        binding.inViewDrawer.ivDrawerClose.setOnClickListener {
+            binding.dlMain.close()
+//            mBinding.dlMain.closeDrawer(GravityCompat.START)
+//            mBinding.dlMain.closeDrawer(Gravity.LEFT)
+        }
+
+        val mainActivity = activity as MainActivity
+
+        val bnv_main = mainActivity.bnv_main
+
+        binding.inViewDrawer.homeSetting.setOnClickListener {
+
+            val afterHomeFragment = AfterHomeFragment()
+            // accountEmail 값을 Bundle에 추가하여 인자로 전달
+            val args = Bundle()
+            args.putString("accountEmail", accountEmail)
+            args.putString("userName", userName)
+            afterHomeFragment.arguments = args
+
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.containers, afterHomeFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+
+            bnv_main.menu.findItem(R.id.home).isChecked = true
+            bnv_main.itemIconTintList = ContextCompat.getColorStateList(requireContext(), R.color.click_home)
+            bnv_main.itemTextColor = ContextCompat.getColorStateList(requireContext(), R.color.click_home)
+        }
+
+        binding.inViewDrawer.adduserSetting.setOnClickListener {
+
+            val intent = Intent(requireContext(), AddFriendActivity::class.java)
+            intent.putExtra("userEmail", accountEmail)
+            startActivity(intent)
+        }
+
+        binding.inViewDrawer.userSetting.setOnClickListener {
+
+            val intent = Intent(requireContext(), MyPageActivity::class.java)
+            intent.putExtra("userEmail", accountEmail)
+            intent.putExtra("userName", userName)
+            startActivity(intent)
+
+        }
+
+
+        binding.inViewDrawer.logoutSetting.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("로그아웃")
+            builder.setMessage("로그아웃 하시겠습니까?")
+
+            // 예 버튼 처리
+            builder.setPositiveButton("예") { dialog, which ->
+                // 예 버튼을 클릭하면 로그아웃 처리를 수행
+                navigateToLoginActivity()
+            }
+
+            // 아니오 버튼 처리
+            builder.setNegativeButton("아니오") { dialog, which ->
+                // 아니오 버튼을 클릭하면 다이얼로그를 닫음 (아무 동작 없음)
+                dialog.dismiss()
+            }
+
+            // 다이얼로그를 표시
+            val dialog = builder.create()
+            dialog.show()
+
+        }
+
+        binding.inViewDrawer.friendListSetting.setOnClickListener {
+            val friendIntent  = Intent(requireContext(), FriendListActivity::class.java)
+            friendIntent.putExtra("userEmail", accountEmail)
+            startActivity(friendIntent)
+
+        }
+
+
         return view
+    }
+
+    private fun navigateToLoginActivity() {
+        val intent = Intent(context, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
     }
 
     //병원 라벨을 삭제하는 함수

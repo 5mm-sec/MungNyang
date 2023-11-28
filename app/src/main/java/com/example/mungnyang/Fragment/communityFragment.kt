@@ -61,6 +61,7 @@ class communityFragment : Fragment() {
 
         val view = binding.root
         accountEmail = arguments?.getString("accountEmail") ?: ""
+        userName = arguments?.getString("userName") ?: ""
 
         findFriend(accountEmail)
         findFriendCount(accountEmail)
@@ -98,6 +99,7 @@ class communityFragment : Fragment() {
             // accountEmail 값을 Bundle에 추가하여 인자로 전달
             val args = Bundle()
             args.putString("accountEmail", accountEmail)
+            args.putString("userName", userName)
             afterHomeFragment.arguments = args
 
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -121,6 +123,7 @@ class communityFragment : Fragment() {
 
             val intent = Intent(requireContext(), MyPageActivity::class.java)
             intent.putExtra("userEmail", accountEmail)
+            intent.putExtra("userName", userName)
             startActivity(intent)
 
         }

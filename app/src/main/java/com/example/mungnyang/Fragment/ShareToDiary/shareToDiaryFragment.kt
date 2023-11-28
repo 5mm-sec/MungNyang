@@ -96,7 +96,7 @@ class shareToDiaryFragment : Fragment() {
                                 diaryContent = diary.diaryDetail.toString()
                                 selectedDay = diary.selectedDay.toString()
                                 petID = diary.petID.toString()
-
+                                Log.d("dwadwadawd", diary.toString())
                                 val communityDiary = CommunityDiary(petID, selectedDay, nickName, accountEmail, compareEmail, diaryTitle, diaryContent, imageUrl)
                                 communityDiaryList.add(communityDiary)
                                 Log.d("ㅋㄴㄴㄴㄴㄴㄴ", communityDiary.toString())
@@ -119,9 +119,10 @@ class shareToDiaryFragment : Fragment() {
     }
 
     private fun searchFriendDiary(friendInfoList: List<FriendInfo>) {
-        val uniqueDiarySet = HashSet<CommunityDiary>()
+
 
         for (friendInfo in friendInfoList) {
+            val uniqueDiarySet = HashSet<CommunityDiary>()
             val boardEmail = friendInfo.friendEmail
             val nickName = friendInfo.friendNickname
             val imageUrl = friendInfo.friendImageUrl

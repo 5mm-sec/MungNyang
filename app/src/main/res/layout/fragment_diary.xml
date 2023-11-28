@@ -46,8 +46,8 @@
 
                         <TextView
                             android:id="@+id/diary_result"
-                            android:layout_width="197dp"
-                            android:layout_height="38dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="62dp"
                             android:layout_marginTop="849dp"
                             android:fontFamily="Inter"

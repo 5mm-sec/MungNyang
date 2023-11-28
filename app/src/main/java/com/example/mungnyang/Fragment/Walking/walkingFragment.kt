@@ -44,7 +44,7 @@ class walkingFragment : Fragment() ,Interface{
     private var GoalTime: String? = null
     private var GoalDistance: String? = null
     private var GoalKcal: String? = null
-    private var param1: String? = null
+    private var userName: String = ""
     private var param2: String? = null
     private var accountEmail = ""
 
@@ -98,6 +98,7 @@ class walkingFragment : Fragment() ,Interface{
 
         // 프로필 리스트가 비어 있으면 갱신
         accountEmail = arguments?.getString("accountEmail") ?: ""
+        userName = arguments?.getString("userName") ?: ""
 
         // 사용자 이메일 로그 출력
         Log.d("AfterHomeFragment", "사용자 이메일: $accountEmail")
@@ -106,63 +107,8 @@ class walkingFragment : Fragment() ,Interface{
             ProfileManagementOBJ.refreshFrom(accountEmail)
         }
 
-
-        binding.button.setOnClickListener{
-
-            val retrofit = RetrofitManager.instance
-
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-            val currentDate = dateFormat.format(Date())
-
-            val addWalkingDTO = WalkingDTO(
-                1,
-                accountEmail,
-                currentDate,
-                "9:00",
-                "9:30",
-                "00:30:00",
-                "20kcal",
-                "30kcal",
-                "1km",
-                "https://firebasestorage.googleapis.com/v0/b/mungnyang-5261b.appspot.com/o/userImages%2FJPEG_20231022_070526_8422954481409369215.jpg?alt=media&token=8c797e2f-0292-499e-94d6-7b632828bc18")
-
-            Log.d("API BEFORE","hi $addWalkingDTO")
-            val sendAdd = retrofit.apiService.addWalking(addWalkingDTO)
-
-            sendAdd.enqueue(object : Callback<ResponseAddWalkingDTO> {
-
-                override fun onResponse(call: Call<ResponseAddWalkingDTO>, response: Response<ResponseAddWalkingDTO>) {
-
-                    val responseDto = response.body()
-                    Log.d(ContentValues.TAG, "Response received: $responseDto");
-                    if (responseDto != null) {
-                        Log.d(ContentValues.TAG, "Response received: $responseDto");
-
-                        if (responseDto.response) {
-                            Toast.makeText(context, "등록 완료!", Toast.LENGTH_SHORT).show()
-
-
-                        } else {
-                            Toast.makeText(context, "등록 불가능!", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-                    } else {
-                        Toast.makeText(context, "응답이 없습니다.", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                }
-
-                override fun onFailure(call: Call<ResponseAddWalkingDTO>, t: Throwable) {
-                    Toast.makeText(context, "등록 불가능 네트워크 에러!", Toast.LENGTH_SHORT)
-                        .show();
-                }
-            })
-
-
-        }
-
         binding.inViewDrawer.userEmail.text = accountEmail
-
+        binding.inViewDrawer.userName.text = userName
         // drawer 잠금
         binding.dlMain.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
@@ -183,12 +129,12 @@ class walkingFragment : Fragment() ,Interface{
         val bnv_main = mainActivity.bnv_main
 
         binding.inViewDrawer.homeSetting.setOnClickListener {
-            Toast.makeText(activity, "홈 클릭", Toast.LENGTH_SHORT).show()
 
             val afterHomeFragment = AfterHomeFragment()
             // accountEmail 값을 Bundle에 추가하여 인자로 전달
             val args = Bundle()
             args.putString("accountEmail", accountEmail)
+            args.putString("userName", userName)
             afterHomeFragment.arguments = args
 
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -212,6 +158,7 @@ class walkingFragment : Fragment() ,Interface{
 
             val intent = Intent(requireContext(), MyPageActivity::class.java)
             intent.putExtra("userEmail", accountEmail)
+            intent.putExtra("userName", userName)
             startActivity(intent)
 
         }

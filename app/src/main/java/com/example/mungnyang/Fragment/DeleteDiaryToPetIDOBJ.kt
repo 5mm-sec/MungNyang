@@ -42,7 +42,7 @@ object DeleteDiaryToPetIDOBJ {
                         deletePetToSymptom(petIDInt, activity)
                         deletePetToSchedule(petIDInt, activity)
                         deletePetToDiary(petIDInt, activity)
-                        Toast.makeText(activity, "삭제 완료!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "삭제 되었습니다.", Toast.LENGTH_SHORT).show()
                         activity.finish()
 
                     } else {

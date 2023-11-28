@@ -91,7 +91,6 @@ class CommunityWalkingAdapter(private val context: Context?, private val account
                 boardWalkingIntent.putExtra("petKcalAmount", communityWalking.petKcalAmount.toString())
                 boardWalkingIntent.putExtra("myKcalAmount", communityWalking.myKcalAmount.toString())
                 boardWalkingIntent.putExtra("mapImageURL", communityWalking.mapImageURL.toString())
-
                 boardWalkingIntent.putExtra("userImageURL", communityWalking.userImageURL.toString())
                 boardWalkingIntent.putExtra("accountNickName", accountNickName)
                 boardWalkingIntent.putExtra("imageURL", imageURL)

@@ -7,12 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.mungnyang.DiaryPage.Diary.ResponseDiaryDTO
-import com.example.mungnyang.DiaryPage.Diary.initSearchDayOBJ
 import com.example.mungnyang.Fragment.DeleteDiaryToSelectedDayOBJ
 import com.example.mungnyang.Fragment.ShareToDiary.Answer.DiaryAnswer
 import com.example.mungnyang.Fragment.ShareToDiary.Answer.DiaryAnswerAdapter
@@ -51,7 +49,6 @@ class DiaryBoardActivity : AppCompatActivity() {
     private var petID : String = ""
     private var selectedDay : String = ""
 
-    private var dbToUserEmail : String? = null
 
     private var diaryAnswerList : MutableList<DiaryAnswer> = mutableListOf()
 
@@ -90,9 +87,6 @@ class DiaryBoardActivity : AppCompatActivity() {
 
         //searchByUserEmail(userEmail)
         searchByBoardEmail(boardEmail)
-
-        Log.d("ㅋㅋㅋㅋㅋㅋㅋㅋㅋ", dbToUserEmail.toString())
-
         val defaultImage = R.drawable.defaultuserimage;
 
         Glide.with(this@DiaryBoardActivity)
@@ -118,8 +112,6 @@ class DiaryBoardActivity : AppCompatActivity() {
         binding.backImagebutton.setOnClickListener {
             finish()
         }
-
-
 
 
         if(userEmail == boardEmail) {
@@ -220,14 +212,9 @@ class DiaryBoardActivity : AppCompatActivity() {
                             Toast.makeText(this@DiaryBoardActivity, "작성 완료!", Toast.LENGTH_SHORT).show()
 
                             diaryAnswerList.clear() // 기존 목록을 지우고 새로 불러오기
-                            Log.d("searchByUserEmail", userEmail)
-                            //searchByUserEmail(userEmail)
-
-                            Log.d("searchByBoardEmail", userEmail)
 
                             binding.commentEditText.text = null
 
-                            Log.d("보내기 이메일에서의 유저 이메일", dbToUserEmail.toString())
                             if( boardEmail == userEmail){
                                 searchByBoardEmail(boardEmail)
                                 diaryAnswerAdapter.notifyDataSetChanged()
@@ -294,47 +281,12 @@ class DiaryBoardActivity : AppCompatActivity() {
         binding.recyclerAnswerList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
 
-        val sendDiaryAnswerSearch = retrofit.apiService.searchByUserEmail(userEmail)
-        sendDiaryAnswerSearch.enqueue(object : Callback<SearchResponseDiaryAnswerDTO> {
-            override fun onResponse(
-                call: Call<SearchResponseDiaryAnswerDTO>,
-                response: Response<SearchResponseDiaryAnswerDTO>
-            ) {
-                val responseDto = response.body()
-
-                if (responseDto != null) {
-                    val answerList = responseDto.answerList
-
-                    if (answerList.isNotEmpty()) {
-
-                        for (answerList in answerList) {
-                            dbToUserEmail = answerList.userEmail.toString()
-
-                            Log.d("DB 에서의 유저 이메일", dbToUserEmail.toString())
-                        }
-                    } else {
-                        Log.d(TAG2, "No users found for the provided email")
-                    }
-
-
-                } else {
-                    Log.d(TAG2, "Search Response is null")
-                }
-            }
-
-            override fun onFailure(call: Call<SearchResponseDiaryAnswerDTO>, t: Throwable) {
-                Log.e(TAG2, "Search Request Failed: ${t.message}", t)
-            }
-        })
-        Log.d("테스트 디비 유저미에일", dbToUserEmail.toString())
-
-
         if(userEmail == boardEmail){
-            diaryAnswerAdapter = DiaryAnswerAdapter(this, diaryAnswerList, userEmail)
+            diaryAnswerAdapter = DiaryAnswerAdapter(this, diaryAnswerList, boardEmail)
             binding.recyclerAnswerList.adapter = diaryAnswerAdapter
         }
         else{
-            diaryAnswerFriendAdapter = DiaryAnswerFriendAdapter(this, diaryAnswerList)
+            diaryAnswerFriendAdapter = DiaryAnswerFriendAdapter(this, diaryAnswerList, userEmail)
             binding.recyclerAnswerList.adapter = diaryAnswerFriendAdapter
         }
         //communityDiaryAdapter.notifyDataSetChanged()
@@ -343,7 +295,6 @@ class DiaryBoardActivity : AppCompatActivity() {
 
 
     private fun searchByBoardEmail(boardEmail1: String){
-
 
         val sendDiaryAnswerSearch = retrofit.apiService.searchByBoardEmail(boardEmail1)
         sendDiaryAnswerSearch.enqueue(object : Callback<SearchResponseDiaryAnswerDTO> {
@@ -373,8 +324,6 @@ class DiaryBoardActivity : AppCompatActivity() {
 
                                 val diaryAnswer = DiaryAnswer(findAnswerID, findUserEmail, findUserNickName, findBoardTitle, findAnswerText, findTime, findUserURL)
 
-                                Log.d("게시판 이메일에서의 유저 이메일", dbToUserEmail.toString())
-                                
                                 diaryAnswerList.add(diaryAnswer)
                                 if(userEmail == boardEmail){
                                     diaryAnswerAdapter.notifyDataSetChanged()

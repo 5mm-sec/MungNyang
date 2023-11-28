@@ -14,15 +14,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.mungnyang.Pet.PetDTO.PetDTO
-import com.example.mungnyang.Pet.PetDTO.ResponsePetDTO
 import com.example.mungnyang.R
-import com.example.mungnyang.User.Login.LoginActivity
 import com.example.mungnyang.User.UserDTO.ResponseAccountDTO
 import com.example.mungnyang.User.UserDTO.ResponseUpdateAccountDTO
 import com.example.mungnyang.User.UserDTO.UpdateAccountDTO

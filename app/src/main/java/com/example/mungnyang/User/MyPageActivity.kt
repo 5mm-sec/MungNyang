@@ -7,11 +7,9 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.mungnyang.Fragment.AfterHomeFragment
 import com.example.mungnyang.MainPage.MainActivity
 import com.example.mungnyang.MainPage.MoreAddPetActivity
 import com.example.mungnyang.Profile.Interface
@@ -36,6 +34,7 @@ class MyPageActivity: AppCompatActivity() {
     private var userNickName : String = ""
     private val REQUEST_ADD_PET = 1
     private var userEmail : String = ""
+    private var userName : String = ""
 
     private var petURL : String = ""
 
@@ -51,6 +50,7 @@ class MyPageActivity: AppCompatActivity() {
         petImage = binding.userImage
 
         userEmail = intent.getStringExtra("userEmail").toString()
+        userName = intent.getStringExtra("userName").toString()
 
         findUserData(userEmail)
 
@@ -79,6 +79,7 @@ class MyPageActivity: AppCompatActivity() {
             Toast.makeText(this, "홈 클릭", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java) // 호스팅 액티비티로 변경
             intent.putExtra("accountEmail", userEmail)
+            intent.putExtra("userName", userName)
             startActivity(intent)
             finish()
         }

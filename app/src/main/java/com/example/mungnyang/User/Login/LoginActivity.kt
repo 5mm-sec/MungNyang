@@ -10,6 +10,7 @@ import com.example.mungnyang.Fragment.AfterHomeFragment
 import com.example.mungnyang.MainPage.MainActivity
 import com.example.mungnyang.Pet.PetDTO.ResponsePetDTO
 import com.example.mungnyang.User.SignupActivity
+import com.example.mungnyang.User.UserDTO.ResponseAccountDTO
 import com.example.mungnyang.User.UserRetrofit.RetrofitManager
 import com.example.mungnyang.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.Auth
@@ -27,15 +28,14 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var googleApiClient: GoogleApiClient
     private val GOOGLE_SIGN_IN_REQUEST_CODE = 3674
-    // SharedPreferences 키 값 상수 정의
+
     private val SHARED_PREFS_NAME = "MyPrefs"
     private val TOKEN_KEY = "token"
 
 
     private var accountEmail = ""
-    private var petName = ""
     private var petImage = ""
-
+    private var userName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,30 +49,26 @@ class LoginActivity : AppCompatActivity() {
         val idEditText = binding.emailedittext
         val pwEditText = binding.passwordedittext
         val signupButton = binding.signupbutton
-        //binding.emailedittext.setText("test1234@daum.net")
-        //binding.passwordedittext.setText("1q2w3e4r!")
+        binding.emailedittext.setText("test1@daum.net")
+        binding.passwordedittext.setText("1q2w3e4r!")
 
         val retrofit = RetrofitManager.instance;
 
-        // Firebase Storage 참조
+
         val storage = FirebaseStorage.getInstance()
         val storageReference: StorageReference = storage.reference
 
-        // Kakao SDK 초기화
-        //KakaoSdk.init(this, appKey = "2ab3e1d57402481098dc858b5a9c7beb")
-
-        // Google 로그인 옵션 설정
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
 
-        // GoogleApiClient 생성
+
         googleApiClient = GoogleApiClient.Builder(this)
             .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
             .build()
 
         googleLoginButtonTextView.setOnClickListener {
-            // 구글 로그인 버튼 클릭 이벤트 처리
+
             val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
             startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
         }
@@ -125,15 +121,18 @@ class LoginActivity : AppCompatActivity() {
 
                                 // 토큰이 존재한다면 로그인 성공 처리
                                 if (savedToken != null) {
-                                    Toast.makeText(this@LoginActivity, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                                    // MainActivity로 이동
-                                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
 
-                                    intent.putExtra("accountEmail", email)
 
-                                    startActivity(intent)
-                                    finish()
 
+                                    findUserData(email) { userName ->
+                                        Toast.makeText(this@LoginActivity, "로그인 되었습니다!", Toast.LENGTH_SHORT).show()
+                                        // MainActivity로 이동
+                                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                        intent.putExtra("accountEmail", email)
+                                        intent.putExtra("userName", userName)
+                                        startActivity(intent)
+                                        finish()
+                                    }
                                 } else {
                                     Toast.makeText(this@LoginActivity, "토큰 저장 실패!", Toast.LENGTH_SHORT).show()
                                 }
@@ -163,6 +162,38 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun findUserData(userEmail: String, callback: (String) -> Unit) {
+        val retrofit = RetrofitManager.instance
+
+        val sendUserSearch = retrofit.apiService.findUser(userEmail)
+        sendUserSearch.enqueue(object : Callback<ResponseAccountDTO> {
+            override fun onResponse(
+                call: Call<ResponseAccountDTO>,
+                response: Response<ResponseAccountDTO>
+            ) {
+                val responseDto = response.body()
+                if (responseDto != null) {
+                    val userList = responseDto.userList
+
+                    if (userList.isNotEmpty()) {
+                        for (user in userList) {
+                            val userName = user.userName.toString()
+                            callback(userName) // Call the callback with the userName
+                        }
+                    } else {
+                        Log.d(ContentValues.TAG, "No users found for the provided email")
+                    }
+                } else {
+                    Log.d(ContentValues.TAG, "Search Response is null")
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseAccountDTO>, t: Throwable) {
+                Log.e(ContentValues.TAG, "Search Request Failed: ${t.message}", t)
+            }
+        })
     }
 
 //    private fun handleKakaoLogin(token: OAuthToken) {

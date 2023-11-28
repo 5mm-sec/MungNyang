@@ -65,8 +65,8 @@ class DiaryPageActivity   : AppCompatActivity() {
                         calendarData,
                         petID!!.toInt(),
                         timeResult,
-                        diaryTitle,
                         detailEditText,
+                        diaryTitle,
                         userEmail.toString()
                     )
 

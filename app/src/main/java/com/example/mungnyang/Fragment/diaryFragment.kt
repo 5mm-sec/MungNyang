@@ -59,6 +59,7 @@ class diaryFragment : Fragment() {
     private var petWater = ""
     private var petIDInt = 0
     private var accountEmail = ""
+    private var userName : String = ""
 
     private lateinit var calendarView: MaterialCalendarView
     private var symptomList: ArrayList<Int>? = null
@@ -75,8 +76,10 @@ class diaryFragment : Fragment() {
         calendarView = binding.calendarView2 as MaterialCalendarView
 
         accountEmail = arguments?.getString("accountEmail") ?: ""
+        userName = arguments?.getString("userName") ?: ""
 
         binding.inViewDrawer.userEmail.text = accountEmail
+        binding.inViewDrawer.userName.text = userName
 
         val retrofit = RetrofitManager.instance
 
@@ -248,12 +251,13 @@ class diaryFragment : Fragment() {
         val bnv_main = mainActivity.bnv_main
 
         binding.inViewDrawer.homeSetting.setOnClickListener {
-            Toast.makeText(activity, "홈 클릭", Toast.LENGTH_SHORT).show()
 
             val afterHomeFragment = AfterHomeFragment()
             // accountEmail 값을 Bundle에 추가하여 인자로 전달
             val args = Bundle()
             args.putString("accountEmail", accountEmail)
+            args.putString("userName", userName)
+
             afterHomeFragment.arguments = args
 
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -283,6 +287,7 @@ class diaryFragment : Fragment() {
         binding.inViewDrawer.userSetting.setOnClickListener {
             val intent = Intent(requireContext(), MyPageActivity::class.java)
             intent.putExtra("userEmail", accountEmail)
+            intent.putExtra("userName", userName)
             startActivity(intent)
 
         }

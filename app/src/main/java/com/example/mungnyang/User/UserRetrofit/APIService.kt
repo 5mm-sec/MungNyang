@@ -224,6 +224,9 @@ interface APIService {
     // 산책 일지 댓글 가져옴
     @GET("walkingAnswer/boardEmail")
     fun searchByWalkingBoardEmail(@Query("boardEmail") boardEmail: String) : Call<SearchResponseWalkingAnswerDTO>
+
+    @GET("walkingAnswer/userEmail")
+    fun searchByWalkingUserEmail(@Query("userEmail") userEmail: String) : Call<SearchResponseWalkingAnswerDTO>
     
     // 산책 기록 개수 전달
     @GET("walkingAnswer/answerCount")

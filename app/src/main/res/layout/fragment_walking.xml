@@ -140,11 +140,6 @@
                             android:layout_width="142dp"
                             android:layout_height="151dp" />
 
-                        <Button
-                            android:id="@+id/button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Button" />
 
                     </RelativeLayout>
 
@@ -179,7 +174,6 @@
                                 android:layout_marginTop="0dp"
                                 android:layout_width="460dp"
                                 android:layout_height="99.1dp" />
-
 
                         </RelativeLayout>
 

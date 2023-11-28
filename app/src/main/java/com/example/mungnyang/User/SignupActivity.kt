@@ -83,34 +83,42 @@ class SignupActivity : AppCompatActivity() {
         // 중복 확인 버튼 클릭 시 이벤트 처리
         binding.signupEmailcheck.setOnClickListener {
 
-            val emailedittext = binding.emailedittext.text.toString();
-            Log.d("EMAIL", "$emailedittext")
-            val sendValidCheck = retrofit.apiService.emailValidCheck(emailedittext);
+            val emailedittext = binding.emailedittext.text.toString()
 
-            sendValidCheck.enqueue(object : Callback<ResponseDTO> {
-                override fun onResponse(call: Call<ResponseDTO>, response: Response<ResponseDTO>) {
-                    val responseDto = response.body();
-                    Log.d("ㅇ", responseDto.toString())
+            if(emailedittext.isEmpty()){
+                Toast.makeText(this@SignupActivity, "이메일을 확인해 주세요.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                Log.d("EMAIL", "$emailedittext")
+                val sendValidCheck = retrofit.apiService.emailValidCheck(emailedittext);
 
-                    if (responseDto != null) {
-                        if (responseDto.response) {
-                            Toast.makeText(this@SignupActivity, "사용 가능한 이메일 입니다!", Toast.LENGTH_SHORT).show()
-                            isEmailValid = true
+                sendValidCheck.enqueue(object : Callback<ResponseDTO> {
+                    override fun onResponse(call: Call<ResponseDTO>, response: Response<ResponseDTO>) {
+                        val responseDto = response.body();
+                        Log.d("ㅇ", responseDto.toString())
+
+                        if (responseDto != null) {
+                            if (responseDto.response) {
+                                Toast.makeText(this@SignupActivity, "사용 가능한 이메일 입니다!", Toast.LENGTH_SHORT).show()
+                                isEmailValid = true
+                            } else {
+                                Toast.makeText(this@SignupActivity, "사용 불가능한 이메일 입니다!", Toast.LENGTH_SHORT).show()
+                                isEmailValid = false
+                            }
                         } else {
-                            Toast.makeText(this@SignupActivity, "사용 불가능한 이메일 입니다!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@SignupActivity, "서버 응답이 없습니다.", Toast.LENGTH_SHORT).show()
                             isEmailValid = false
                         }
-                    } else {
-                        Toast.makeText(this@SignupActivity, "서버 응답이 없습니다.", Toast.LENGTH_SHORT).show()
-                        isEmailValid = false
                     }
-                }
 
-                override fun onFailure(call: Call<ResponseDTO>, t: Throwable) {
-                    Log.e("API TEST", "ERROR  = ${t.message}")
-                }
+                    override fun onFailure(call: Call<ResponseDTO>, t: Throwable) {
+                        Log.e("API TEST", "ERROR  = ${t.message}")
+                    }
 
-            })
+                })
+
+            }
 
         }
 
@@ -129,14 +137,12 @@ class SignupActivity : AppCompatActivity() {
             }
 
             // 중복 체크 여부 확인
-
-
             if (!isEmailValid) {
                 Toast.makeText(this@SignupActivity, "중복 체크를 해주세요.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val registerDTO = AccountDTO(email, password, nickName, phoneNumber, userName, URL)
+            val registerDTO = AccountDTO(email, password, userName, phoneNumber, nickName, URL)
             Log.d("API BEFORE", "hi $registerDTO")
             val sendRegister = retrofit.apiService.register(registerDTO);
             sendRegister.enqueue(object : Callback<ResponseDTO> {

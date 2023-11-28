@@ -42,7 +42,7 @@ public class MapCapture {
                 EGL10 egl = (EGL10) EGLContext.getEGL();
                 GL10 gl = (GL10) egl.eglGetCurrentContext().getGL();
                 Bitmap bitmap = createBitmapFromGLSurface(0, 0, surfaceView.getWidth(),
-                surfaceView.getHeight(), gl);
+                        surfaceView.getHeight(), gl);
 
                 boolean isSucceed = bitmapToImage(activity.getApplicationContext(), bitmap, fileName);
 
@@ -74,7 +74,7 @@ public class MapCapture {
 
 
     private static Bitmap createBitmapFromGLSurface(int x, int y, int w, int h, GL10 gl)
-    throws OutOfMemoryError {
+            throws OutOfMemoryError {
         int bitmapBuffer[] = new int[w * h];
         int bitmapSource[] = new int[w * h];
         IntBuffer intBuffer = IntBuffer.wrap(bitmapBuffer);
@@ -89,12 +89,12 @@ public class MapCapture {
                 offset2 = (h - i - 1) * w;
 
                 for (int j = 0; j < w; j++) {
-                int texturePixel = bitmapBuffer[offset1 + j];
-                int blue = (texturePixel >> 16) & 0xff;
-                int red = (texturePixel << 16) & 0x00ff0000;
-                int pixel = (texturePixel & 0xff00ff00) | red | blue;
-                bitmapSource[offset2 + j] = pixel;
-            }
+                    int texturePixel = bitmapBuffer[offset1 + j];
+                    int blue = (texturePixel >> 16) & 0xff;
+                    int red = (texturePixel << 16) & 0x00ff0000;
+                    int pixel = (texturePixel & 0xff00ff00) | red | blue;
+                    bitmapSource[offset2 + j] = pixel;
+                }
             }
         } catch (GLException e) {
             return null;
@@ -108,20 +108,18 @@ public class MapCapture {
             return false;
         }
 
-        // DCIM 폴더에 저장할 디렉토리 경로 설정
-        String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
-            .toString() + "/MapCaptureDemo";
-        File directory = new File(dir);
+        // 앱 전용 디렉토리 경로 설정
+        File directory = context.getExternalFilesDir("MapCaptureDemo");
 
         // 디렉토리가 존재하지 않으면 생성
-        if (!directory.exists()) {
+        if (directory == null || !directory.exists()) {
             if (!directory.mkdirs()) {
                 MapLogger.e("Failed to create directory");
                 return false;
             }
         }
 
-        File tempFile = new File(dir, fileName);
+        File tempFile = new File(directory, fileName);
 
         try {
             tempFile.createNewFile();
@@ -143,27 +141,30 @@ public class MapCapture {
         StorageReference storageRef = storage.getReference();
 
         // 업로드할 이미지 파일 경로 설정
-        String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
-            .toString() + "/MapCaptureDemo/" + fileName;
+        File directory = context.getExternalFilesDir("MapCaptureDemo");
+        if (directory != null) {
+            String filePath = directory.getAbsolutePath() + File.separator + fileName;
 
-        // Storage에 이미지 업로드
-        StorageReference imageRef = storageRef.child("mapImage/" + fileName);
-        UploadTask uploadTask = imageRef.putFile(Uri.fromFile(new File(filePath)));
+            // Storage에 이미지 업로드
+            StorageReference imageRef = storageRef.child("mapImage/" + fileName);
+            UploadTask uploadTask = imageRef.putFile(Uri.fromFile(new File(filePath)));
 
-        // 업로드 리스너 설정
-        uploadTask.addOnSuccessListener(taskSnapshot -> {
-            // 업로드 성공 시 이미지의 다운로드 URL을 가져옴
-            imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-            String imageUrl = uri.toString();
-            listener.onImageUploaded(true, imageUrl);
-        });
-        }).addOnFailureListener(e -> {
-            // 업로드 실패 시 오류 처리
-            Toast.makeText(context, "이미지 업로드 실패", Toast.LENGTH_SHORT).show();
+            // 업로드 리스너 설정
+            uploadTask.addOnSuccessListener(taskSnapshot -> {
+                // 업로드 성공 시 이미지의 다운로드 URL을 가져옴
+                imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                    String imageUrl = uri.toString();
+                    listener.onImageUploaded(true, imageUrl);
+                });
+            }).addOnFailureListener(e -> {
+                // 업로드 실패 시 오류 처리
+                Toast.makeText(context, "이미지 업로드 실패", Toast.LENGTH_SHORT).show();
+                listener.onImageUploaded(false, null);
+            });
+        } else {
+            // 디렉토리가 null이라면 처리할 수 없음
             listener.onImageUploaded(false, null);
-        });
-
-
+        }
     }
 
     // 이미지 업로드 결과를 처리하는 리스너 인터페이스

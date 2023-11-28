@@ -21,6 +21,9 @@ import com.example.mungnyang.Pet.PetDTO.ResponsePetDTO
 import com.example.mungnyang.R
 import com.example.mungnyang.User.UserRetrofit.RetrofitManager
 import com.example.mungnyang.databinding.ActivityWalkingBoardBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +57,7 @@ class WalkingBoardActivity : AppCompatActivity() {
     private var findAnswerID : Int = 0
     private var findWalkingBoardID : Int = 0
     private var findWalkingID : Int = 0
+    private var finMapURL : String = ""
 
     private var petID : String = ""
     private var petName : String = ""
@@ -74,7 +78,6 @@ class WalkingBoardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val userNickName = intent.getStringExtra("userNickName")
-
         val userImageURL = intent.getStringExtra("userImageURL")
 
         startTime = intent.getStringExtra("startTime").toString()
@@ -99,9 +102,38 @@ class WalkingBoardActivity : AppCompatActivity() {
 
         Log.d("펫 아이디", petID)
 
-        //searchByUserEmail(userEmail)
-        searchBoardEmail2(boardEmail)
-        searchByBoardEmail(boardEmail)
+
+        val sendWalkingSearch = retrofit.apiService.shareWalkingDiary(boardEmail)
+        sendWalkingSearch.enqueue(object : Callback<SearchResponseWalkingDTO> {
+            override fun onResponse(call: Call<SearchResponseWalkingDTO>, response: Response<SearchResponseWalkingDTO>) {
+                val responseDto = response.body()
+                Log.d("테스트", responseDto.toString())
+
+                if (responseDto != null) {
+                    val walkingList = responseDto.walkingDiaryList
+
+                    if (walkingList.isNotEmpty()) {
+                        for (walkingDiary in walkingList) {
+                            val dbPetID = walkingDiary.petID.toString()
+                            val dbSelectedDay = walkingDiary.selectedDay.toString()
+                            val dbMapImageURL = walkingDiary.mapImageURL.toString()
+                            if(dbMapImageURL == mapImageURL){
+                                findWalkingBoardID = walkingDiary.walkingID!!.toInt()
+                            }
+                        }
+                        searchByBoardEmail(boardEmail, findWalkingBoardID)
+                    } else {
+                        Log.d(ContentValues.TAG, "No diary found for the provided email")
+                    }
+                } else {
+                    Log.d(ContentValues.TAG, "Search Response is null")
+                }
+            }
+
+            override fun onFailure(call: Call<SearchResponseWalkingDTO>, t: Throwable) {
+                Log.e(ContentValues.TAG, "Search Request Failed: ${t.message}", t)
+            }
+        })
 
 
         // PetID를 이용해 해당하는 펫의 정보를 불러옴
@@ -275,26 +307,17 @@ class WalkingBoardActivity : AppCompatActivity() {
                             Toast.makeText(this@WalkingBoardActivity, "작성 완료!", Toast.LENGTH_SHORT).show()
 
                             walkingAnswerList.clear() // 기존 목록을 지우고 새로 불러오기
-                            Log.d("searchByUserEmail", userEmail)
-                            //searchByUserEmail(userEmail)
-
-                            Log.d("searchByBoardEmail", userEmail)
 
                             binding.commentEditText.text = null
 
                             if( boardEmail == userEmail){
-                                searchByBoardEmail(boardEmail)
+                                searchByBoardEmail(boardEmail, findWalkingBoardID)
                                 walkingAnswerAdapter.notifyDataSetChanged()
                             }
                             else{
-                                searchByBoardEmail(boardEmail)
+                                searchByBoardEmail(boardEmail, findWalkingBoardID)
                                 walkingAnswerFriendAdapter.notifyDataSetChanged()
                             }
-                            // 스크롤을 맨 아래로 이동
-                            //binding.recyclerAnswerList.scrollToPosition(diaryAnswerList.size - 1)
-
-                            //diaryAnswerAdapter.notifyDataSetChanged()
-                            //diaryAnswerFriendAdapter.notifyDataSetChanged()
 
                         } else {
                             Toast.makeText(this@WalkingBoardActivity, "작성 불가능!", Toast.LENGTH_SHORT)
@@ -348,54 +371,18 @@ class WalkingBoardActivity : AppCompatActivity() {
         binding.recyclerWalkingAnswerList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         if(userEmail == boardEmail){
-            walkingAnswerAdapter = WalkingAnswerAdapter(this, walkingAnswerList)
+            walkingAnswerAdapter = WalkingAnswerAdapter(this, walkingAnswerList, boardEmail)
             binding.recyclerWalkingAnswerList.adapter = walkingAnswerAdapter
         }
         else{
-            walkingAnswerFriendAdapter = WalkingAnswerFriendAdapter(this, walkingAnswerList)
+            walkingAnswerFriendAdapter = WalkingAnswerFriendAdapter(this, walkingAnswerList, userEmail)
             binding.recyclerWalkingAnswerList.adapter = walkingAnswerFriendAdapter
         }
         //communityDiaryAdapter.notifyDataSetChanged()
 
     }
 
-
-    private fun searchBoardEmail2(boardEmail2: String){
-        val sendWalkingSearch = retrofit.apiService.shareWalkingDiary(boardEmail2)
-        sendWalkingSearch.enqueue(object : Callback<SearchResponseWalkingDTO> {
-            override fun onResponse(call: Call<SearchResponseWalkingDTO>, response: Response<SearchResponseWalkingDTO>) {
-                val responseDto = response.body()
-                Log.d("테스트", responseDto.toString())
-
-                if (responseDto != null) {
-                    val walkingList = responseDto.walkingDiaryList
-
-                    if (walkingList.isNotEmpty()) {
-                        for (walkingDiary in walkingList) {
-                            val dbPetID = walkingDiary.petID.toString()
-                            val dbSelectedDay = walkingDiary.selectedDay.toString()
-                            val dbMapImageURL = walkingDiary.mapImageURL.toString()
-
-                            if(dbPetID == petID && dbSelectedDay == selectedDay && dbMapImageURL == mapImageURL){
-                                findWalkingBoardID = walkingDiary.walkingID!!.toInt()
-                            }
-                        }
-                    } else {
-                        Log.d(ContentValues.TAG, "No diary found for the provided email")
-                    }
-                } else {
-                    Log.d(ContentValues.TAG, "Search Response is null")
-                }
-            }
-
-            override fun onFailure(call: Call<SearchResponseWalkingDTO>, t: Throwable) {
-                Log.e(ContentValues.TAG, "Search Request Failed: ${t.message}", t)
-            }
-        })
-
-    }
-
-    private fun searchByBoardEmail(boardEmail1: String){
+    private fun searchByBoardEmail(boardEmail1: String, walkingBoardID: Int){
 
         val sendWalkingAnswerSearch = retrofit.apiService.searchByWalkingBoardEmail(boardEmail1)
         sendWalkingAnswerSearch.enqueue(object : Callback<SearchResponseWalkingAnswerDTO> {
@@ -412,7 +399,7 @@ class WalkingBoardActivity : AppCompatActivity() {
 
                         for (answerList in answerList) {
 
-                            findWalkingID = answerList.walkingAnswerID!!.toInt()
+                            findWalkingID = answerList.walkingID!!.toInt()
                             findUserEmail = answerList.userEmail.toString()
                             findUserNickName = answerList.userNickName.toString()
                             findAnswerText = answerList.answerText.toString()
@@ -425,9 +412,9 @@ class WalkingBoardActivity : AppCompatActivity() {
 
                             Log.d("워킹 리스트", answerList.toString())
 
-                            if (selectedDay == findSelectedDay && findBoardEmail == boardEmail1){
+                            if (walkingBoardID == findWalkingID){
 
-                                val walkingAnswer = WalkingAnswer(findAnswerID, findWalkingBoardID, findUserEmail, findBoardEmail, findUserNickName, findPetName, findSelectedDay, findAnswerText, findTime, findUserURL)
+                                val walkingAnswer = WalkingAnswer(findAnswerID, walkingBoardID, findUserEmail, findBoardEmail, findUserNickName, findPetName, findSelectedDay, findAnswerText, findTime, findUserURL)
 
                                 Log.d("워킹 댓글", walkingAnswer.toString())
 
@@ -438,8 +425,6 @@ class WalkingBoardActivity : AppCompatActivity() {
                                 else{
                                     walkingAnswerFriendAdapter.notifyDataSetChanged()
                                 }
-                                //diaryAnswerAdapter.notifyDataSetChanged()
-                                //diaryAnswerFriendAdapter.notifyDataSetChanged()
                             }
                         }
                     } else {

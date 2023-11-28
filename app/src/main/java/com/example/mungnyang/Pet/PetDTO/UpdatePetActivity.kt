@@ -46,7 +46,7 @@ class UpdatePetActivity : AppCompatActivity(){
     private var isButtonClicked: Boolean = false
     var isButtonClicked2: Boolean = false
     var isButtonClicked3: Boolean = false
-
+    private var neutered: Boolean = false
     private val storageRef = FirebaseStorage.getInstance().reference
     private var currentPhotoPath: String? = null
 
@@ -182,12 +182,19 @@ class UpdatePetActivity : AppCompatActivity(){
         yesCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 noCheckBox.isChecked = false
+                neutered = true
+            }else {
+            neutered = false
             }
         }
 
         noCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 yesCheckBox.isChecked = false
+                neutered = false
+            }
+            else{
+                neutered = true
             }
         }
 
@@ -249,7 +256,6 @@ class UpdatePetActivity : AppCompatActivity(){
             if (binding.womanBackground.background.constantState == resources.getDrawable(R.drawable.marking_background)?.constantState) {
                 gender = "여아"
             }
-            val neutered = binding.yesCheckBox.isChecked
 
             val kindEdit = binding.kindedittext.text.toString()
 
@@ -277,7 +283,7 @@ class UpdatePetActivity : AppCompatActivity(){
             Log.d("URL",URL)
 
 
-            if (petName.isEmpty() || birthday.isEmpty() || gender.isEmpty() || kind.isEmpty() || kindEdit.isEmpty() || weight.isEmpty() || !neutered){
+            if (petName.isEmpty() || birthday.isEmpty() || gender.isEmpty() || kind.isEmpty() || kindEdit.isEmpty() || weight.isEmpty() ){
                 Toast.makeText(this@UpdatePetActivity, "필수 항목을 모두 작성 해 주세요!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

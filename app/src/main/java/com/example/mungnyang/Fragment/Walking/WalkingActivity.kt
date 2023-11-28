@@ -82,6 +82,7 @@ class WalkingActivity : AppCompatActivity() {
     private val imageURL: String? = null
     private val polylineOptionsList =
         mutableListOf<PolylineOptions>() // 사용자가 지나간 위치에 대한 PolylineOptions 리스트
+    private var previousLocation: Location? = null // 이전 위치를 저장하기 위한 변수
 
     private lateinit var currentDate: String
     private lateinit var formattedStartTime: String
@@ -173,6 +174,9 @@ class WalkingActivity : AppCompatActivity() {
                     }
                 }
             })
+        }
+        binding.homeButton.setOnClickListener{
+            finish()
         }
 
         val walkingActivityStopButton = binding.walkingActivityStopButton
@@ -269,7 +273,7 @@ class WalkingActivity : AppCompatActivity() {
 
                         if (responseDto.response) {
                             Toast.makeText(this@WalkingActivity, "등록 완료!", Toast.LENGTH_SHORT).show()
-
+                            finish()
 
                         } else {
                             Toast.makeText(this@WalkingActivity, "등록 불가능!", Toast.LENGTH_SHORT)
@@ -560,11 +564,11 @@ class WalkingActivity : AppCompatActivity() {
     private fun addPolylineForCurrentLocation(location: Location, otherLocations: List<Location>) {
         val currentLatLng = LatLng.from(location.latitude, location.longitude)
 
-        // LatLng 배열을 생성합니다. 현재 위치와 다른 위치들을 포함합니다.
+        // LatLng 배열을 생성합니다. 현재 위치와 이전 위치만 포함합니다.
         val latLngArray = mutableListOf(currentLatLng)
-        otherLocations.forEach { otherLocation ->
-            val otherLatLng = LatLng.from(otherLocation.latitude, otherLocation.longitude)
-            latLngArray.add(otherLatLng)
+        previousLocation?.let { previous ->
+            val previousLatLng = LatLng.from(previous.latitude, previous.longitude)
+            latLngArray.add(previousLatLng)
         }
 
         // MapPoints를 생성합니다.
@@ -577,7 +581,7 @@ class WalkingActivity : AppCompatActivity() {
         polylineOptions.setStylesSet(
             PolylineStylesSet.from(
                 PolylineStyles.from(
-                    5f, // 폴리라인 두께
+                    3f, // 폴리라인 두께
                     Color.BLUE // 폴리라인 색상 (파란색 예시)
                 )
             )
@@ -590,6 +594,9 @@ class WalkingActivity : AppCompatActivity() {
         polyline?.let {
             polylineOptionsList.add(polylineOptions)
         }
+
+        // 현재 위치를 이전 위치로 설정
+        previousLocation = location
     }
 
     private fun formatTime(timeInMillis: Long): String {
@@ -599,7 +606,3 @@ class WalkingActivity : AppCompatActivity() {
     }
 
 }
-
-
-
-

@@ -1,6 +1,7 @@
 package com.example.mungnyang.MainPage
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,9 +14,14 @@ import com.example.mungnyang.Fragment.diaryFragment
 import com.example.mungnyang.Fragment.communityFragment
 import com.example.mungnyang.Fragment.Walking.walkingFragment
 import com.example.mungnyang.R
+import com.example.mungnyang.User.UserDTO.ResponseAccountDTO
+import com.example.mungnyang.User.UserRetrofit.RetrofitManager
 import com.example.mungnyang.databinding.ActivityMainBinding
 import com.example.mungnyang.hospitalFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.security.MessageDigest
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bnv_main: BottomNavigationView // bnv_main을 선언
 
     private var accountEmail = ""
-    private var petName = ""
+    private var userName = ""
     private var petImage = ""
 
 
@@ -36,11 +42,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         accountEmail = intent.getStringExtra("accountEmail").toString()
+        userName = intent.getStringExtra("userName").toString()
 //        petName = intent.getStringExtra("petName").toString()
 //        petImage = intent.getStringExtra("petImage").toString()
 
+        //findUserData(accountEmail)
+
+
         Log.d("메인에서 email", accountEmail)
-//        Log.d("메인에서 펫 이름",  petName)
+        Log.d("메인에서 펫 이름",  userName)
 //        Log.d("메인에서 펫 이미지", petImage)
 
         // 카카오 Api 사용시 Sha 값 받아오는 코드
@@ -83,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
                         val bundle = Bundle()
                         bundle.putString("accountEmail", accountEmail)
-//                        bundle.putString("petName", petName)
+                        bundle.putString("userName", userName)
 //                        bundle.putString("petImage", petImage)
 
                         fragment.arguments = bundle
@@ -105,6 +115,7 @@ class MainActivity : AppCompatActivity() {
 
                         val bundle = Bundle()
                         bundle.putString("accountEmail", accountEmail)
+                        bundle.putString("userName", userName)
 //                        bundle.putString("petName", petName)
 //                        bundle.putString("petImage", petImage)
 
@@ -126,6 +137,7 @@ class MainActivity : AppCompatActivity() {
 
                         val bundle = Bundle()
                         bundle.putString("accountEmail", accountEmail)
+                        bundle.putString("userName", userName)
 //                        bundle.putString("petName", petName)
 //                        bundle.putString("petImage", petImage)
 
@@ -148,6 +160,7 @@ class MainActivity : AppCompatActivity() {
 
                         val bundle = Bundle()
                         bundle.putString("accountEmail", accountEmail)
+                        bundle.putString("userName", userName)
 //                        bundle.putString("petName", petName)
 //                        bundle.putString("petImage", petImage)
 
@@ -170,6 +183,7 @@ class MainActivity : AppCompatActivity() {
 
                         val bundle = Bundle()
                         bundle.putString("accountEmail", accountEmail)
+                        bundle.putString("userName", userName)
 //                        bundle.putString("petName", petName)
 //                        bundle.putString("petImage", petImage)
 
@@ -187,6 +201,38 @@ class MainActivity : AppCompatActivity() {
 
         //binding.button.setOnClickListener{startActivity(intent)}
     }
+
+//    private fun findUserData(userEmail: String) {
+//        val retrofit = RetrofitManager.instance
+//
+//        val sendUserSearch = retrofit.apiService.findUser(accountEmail)
+//        sendUserSearch.enqueue(object : Callback<ResponseAccountDTO> {
+//            override fun onResponse(
+//                call: Call<ResponseAccountDTO>,
+//                response: Response<ResponseAccountDTO>
+//            ) {
+//                val responseDto = response.body()
+//                if (responseDto != null) {
+//                    val userList = responseDto.userList
+//
+//                    if (userList.isNotEmpty()) {
+//                        for (user in userList) {
+//                            userName = user.userName.toString()
+//                        }
+//                    } else {
+//                        Log.d(ContentValues.TAG, "No users found for the provided email")
+//                    }
+//                } else {
+//                    Log.d(ContentValues.TAG, "Search Response is null")
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<ResponseAccountDTO>, t: Throwable) {
+//                Log.e(ContentValues.TAG, "Search Request Failed: ${t.message}", t)
+//            }
+//        })
+//    }
+
 
     private fun changeFragment(fragment: Fragment) {
         supportFragmentManager

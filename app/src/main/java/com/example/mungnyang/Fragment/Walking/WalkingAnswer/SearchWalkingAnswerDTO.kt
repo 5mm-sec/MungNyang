@@ -7,6 +7,9 @@ data class SearchWalkingAnswerDTO (
     @SerializedName("walkingAnswerID")
     val walkingAnswerID: Int?,
 
+    @SerializedName("walkingID")
+    val walkingID: Int?,
+
     @SerializedName("userEmail")
     val userEmail: String?,
 

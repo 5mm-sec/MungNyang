@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerList: MutableList<DiaryAnswer>, private val userEmail: String) : RecyclerView.Adapter<DiaryAnswerAdapter.AnswerDiaryViewHolder>() {
+class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerList: MutableList<DiaryAnswer>, private val boardEmail: String) : RecyclerView.Adapter<DiaryAnswerAdapter.AnswerDiaryViewHolder>() {
 
     // 호출되는 횟수가 정해졌음
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerDiaryViewHolder {
@@ -41,7 +41,7 @@ class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerL
     // 스크롤을 많이하면 할수록 많이 호출됨
     override fun onBindViewHolder(holder: AnswerDiaryViewHolder, position: Int) {
         val diaryAnswerList = diaryAnswerList[position]
-        context?.let { holder.bind(it, diaryAnswerList, this, userEmail) }
+        context?.let { holder.bind(it, diaryAnswerList, this, boardEmail) }
     }
 
     // ViewHolder를 만든다는거랑 View를 만든다는거랑 똑같은 말임
@@ -63,7 +63,7 @@ class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerL
             context: Context,
             diaryAnswerList: DiaryAnswer,
             diaryAnswerAdapter: DiaryAnswerAdapter,
-            accountEmail: String
+            boardEmail1: String
         ){
             this.context = context
             binding.userNickNameText.text = diaryAnswerList.userNickName.toString()
@@ -85,8 +85,10 @@ class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerL
                 .into(binding.answerUserImage)
 
             searchByBoardEmail(answerEmail)
-            if(accountEmail == answerEmail) {
+
+            if(boardEmail1 == answerEmail) {
                 binding.deleteAnswerBtn.setOnClickListener {
+
                     //deleteAnswer(answerIDToDB.toInt())
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION) {
@@ -97,7 +99,7 @@ class DiaryAnswerAdapter(private val context: Context?, private val diaryAnswerL
                 }
             }
             else{
-                binding.deleteAnswerBtn.visibility = View.GONE
+                binding.deleteAnswerBtn.alpha = 0.0f
             }
 
         }
